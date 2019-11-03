@@ -1,0 +1,1189 @@
+fileFormatVersion: 2
+guid: 441ad7d1e989849deb41444faa763e41
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Bind_Joint_GRP
+    100002: Character
+    100004: Joint_GRP
+    100006: //RootNode
+    100008: KORIM:Head
+    100010: KORIM:HeadTop_End
+    100012: KORIM:Hips
+    100014: KORIM:KORIM_polySurface15_01
+    100016: KORIM:LeftArm
+    100018: KORIM:LeftFoot
+    100020: KORIM:LeftForeArm
+    100022: KORIM:LeftHand
+    100024: KORIM:LeftHandIndex1
+    100026: KORIM:LeftHandIndex2
+    100028: KORIM:LeftHandIndex3
+    100030: KORIM:LeftHandIndex4
+    100032: KORIM:LeftHandMiddle1
+    100034: KORIM:LeftHandMiddle2
+    100036: KORIM:LeftHandMiddle3
+    100038: KORIM:LeftHandMiddle4
+    100040: KORIM:LeftHandPinky1
+    100042: KORIM:LeftHandPinky2
+    100044: KORIM:LeftHandPinky3
+    100046: KORIM:LeftHandPinky4
+    100048: KORIM:LeftHandRing1
+    100050: KORIM:LeftHandRing2
+    100052: KORIM:LeftHandRing3
+    100054: KORIM:LeftHandRing4
+    100056: KORIM:LeftHandThumb1
+    100058: KORIM:LeftHandThumb2
+    100060: KORIM:LeftHandThumb3
+    100062: KORIM:LeftHandThumb4
+    100064: KORIM:LeftLeg
+    100066: KORIM:LeftShoulder
+    100068: KORIM:LeftToe_End
+    100070: KORIM:LeftToeBase
+    100072: KORIM:LeftUpLeg
+    100074: KORIM:Neck
+    100076: KORIM:RightArm
+    100078: KORIM:RightFoot
+    100080: KORIM:RightForeArm
+    100082: KORIM:RightHand
+    100084: KORIM:RightHandIndex1
+    100086: KORIM:RightHandIndex2
+    100088: KORIM:RightHandIndex3
+    100090: KORIM:RightHandIndex4
+    100092: KORIM:RightHandMiddle1
+    100094: KORIM:RightHandMiddle2
+    100096: KORIM:RightHandMiddle3
+    100098: KORIM:RightHandMiddle4
+    100100: KORIM:RightHandPinky1
+    100102: KORIM:RightHandPinky2
+    100104: KORIM:RightHandPinky3
+    100106: KORIM:RightHandPinky4
+    100108: KORIM:RightHandRing1
+    100110: KORIM:RightHandRing2
+    100112: KORIM:RightHandRing3
+    100114: KORIM:RightHandRing4
+    100116: KORIM:RightHandThumb1
+    100118: KORIM:RightHandThumb2
+    100120: KORIM:RightHandThumb3
+    100122: KORIM:RightHandThumb4
+    100124: KORIM:RightLeg
+    100126: KORIM:RightShoulder
+    100128: KORIM:RightToe_End
+    100130: KORIM:RightToeBase
+    100132: KORIM:RightUpLeg
+    100134: KORIM:Spine
+    100136: KORIM:Spine1
+    100138: KORIM:Spine2
+    100140: stain_gun3
+    400000: Bind_Joint_GRP
+    400002: Character
+    400004: Joint_GRP
+    400006: //RootNode
+    400008: KORIM:Head
+    400010: KORIM:HeadTop_End
+    400012: KORIM:Hips
+    400014: KORIM:KORIM_polySurface15_01
+    400016: KORIM:LeftArm
+    400018: KORIM:LeftFoot
+    400020: KORIM:LeftForeArm
+    400022: KORIM:LeftHand
+    400024: KORIM:LeftHandIndex1
+    400026: KORIM:LeftHandIndex2
+    400028: KORIM:LeftHandIndex3
+    400030: KORIM:LeftHandIndex4
+    400032: KORIM:LeftHandMiddle1
+    400034: KORIM:LeftHandMiddle2
+    400036: KORIM:LeftHandMiddle3
+    400038: KORIM:LeftHandMiddle4
+    400040: KORIM:LeftHandPinky1
+    400042: KORIM:LeftHandPinky2
+    400044: KORIM:LeftHandPinky3
+    400046: KORIM:LeftHandPinky4
+    400048: KORIM:LeftHandRing1
+    400050: KORIM:LeftHandRing2
+    400052: KORIM:LeftHandRing3
+    400054: KORIM:LeftHandRing4
+    400056: KORIM:LeftHandThumb1
+    400058: KORIM:LeftHandThumb2
+    400060: KORIM:LeftHandThumb3
+    400062: KORIM:LeftHandThumb4
+    400064: KORIM:LeftLeg
+    400066: KORIM:LeftShoulder
+    400068: KORIM:LeftToe_End
+    400070: KORIM:LeftToeBase
+    400072: KORIM:LeftUpLeg
+    400074: KORIM:Neck
+    400076: KORIM:RightArm
+    400078: KORIM:RightFoot
+    400080: KORIM:RightForeArm
+    400082: KORIM:RightHand
+    400084: KORIM:RightHandIndex1
+    400086: KORIM:RightHandIndex2
+    400088: KORIM:RightHandIndex3
+    400090: KORIM:RightHandIndex4
+    400092: KORIM:RightHandMiddle1
+    400094: KORIM:RightHandMiddle2
+    400096: KORIM:RightHandMiddle3
+    400098: KORIM:RightHandMiddle4
+    400100: KORIM:RightHandPinky1
+    400102: KORIM:RightHandPinky2
+    400104: KORIM:RightHandPinky3
+    400106: KORIM:RightHandPinky4
+    400108: KORIM:RightHandRing1
+    400110: KORIM:RightHandRing2
+    400112: KORIM:RightHandRing3
+    400114: KORIM:RightHandRing4
+    400116: KORIM:RightHandThumb1
+    400118: KORIM:RightHandThumb2
+    400120: KORIM:RightHandThumb3
+    400122: KORIM:RightHandThumb4
+    400124: KORIM:RightLeg
+    400126: KORIM:RightShoulder
+    400128: KORIM:RightToe_End
+    400130: KORIM:RightToeBase
+    400132: KORIM:RightUpLeg
+    400134: KORIM:Spine
+    400136: KORIM:Spine1
+    400138: KORIM:Spine2
+    400140: stain_gun3
+    2300000: stain_gun3
+    3300000: stain_gun3
+    4300000: KORIM:KORIM_polySurface15_01
+    4300002: stain_gun3
+    7400000: Hide_Karim
+    9500000: //RootNode
+    13700000: KORIM:KORIM_polySurface15_01
+    2186277476908879412: ImportLogs
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert4
+    second: {fileID: 2100000, guid: 12007dcc60dfb47399263499041c1b32, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: stain_gun
+    second: {fileID: 2100000, guid: 435f054ddd9c447629a583adc88de2df, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: "\nClip 'Take 001' has import animation warnings that
+      might lower retargeting quality:\nNote: Activate translation DOF on avatar to
+      improve retargeting quality.\n\t'KORIM:Spine2' is inbetween humanoid transforms
+      and has rotation animation that will be discarded.\n"
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Hide_Karim
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 2
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Character
+        weight: 0
+      - path: Character/Joint_GRP
+        weight: 0
+      - path: Character/Joint_GRP/Bind_Joint_GRP
+        weight: 0
+      - path: KORIM:Hips
+        weight: 1
+      - path: KORIM:Hips/KORIM:LeftUpLeg
+        weight: 1
+      - path: KORIM:Hips/KORIM:LeftUpLeg/KORIM:LeftLeg
+        weight: 1
+      - path: KORIM:Hips/KORIM:LeftUpLeg/KORIM:LeftLeg/KORIM:LeftFoot
+        weight: 1
+      - path: KORIM:Hips/KORIM:LeftUpLeg/KORIM:LeftLeg/KORIM:LeftFoot/KORIM:LeftToeBase
+        weight: 1
+      - path: KORIM:Hips/KORIM:LeftUpLeg/KORIM:LeftLeg/KORIM:LeftFoot/KORIM:LeftToeBase/KORIM:LeftToe_End
+        weight: 0
+      - path: KORIM:Hips/KORIM:RightUpLeg
+        weight: 1
+      - path: KORIM:Hips/KORIM:RightUpLeg/KORIM:RightLeg
+        weight: 1
+      - path: KORIM:Hips/KORIM:RightUpLeg/KORIM:RightLeg/KORIM:RightFoot
+        weight: 1
+      - path: KORIM:Hips/KORIM:RightUpLeg/KORIM:RightLeg/KORIM:RightFoot/KORIM:RightToeBase
+        weight: 1
+      - path: KORIM:Hips/KORIM:RightUpLeg/KORIM:RightLeg/KORIM:RightFoot/KORIM:RightToeBase/KORIM:RightToe_End
+        weight: 0
+      - path: KORIM:Hips/KORIM:Spine
+        weight: 1
+      - path: KORIM:Hips/KORIM:Spine/KORIM:Spine1
+        weight: 1
+      - path: KORIM:Hips/KORIM:Spine/KORIM:Spine1/KORIM:Spine2
+        weight: 1
+      - path: KORIM:Hips/KORIM:Spine/KORIM:Spine1/KORIM:Spine2/KORIM:LeftShoulder
+        weight: 1
+      - path: KORIM:Hips/KORIM:Spine/KORIM:Spine1/KORIM:Spine2/KORIM:LeftShoulder/KORIM:LeftArm
+        weight: 1
+      - path: KORIM:Hips/KORIM:Spine/KORIM:Spine1/KORIM:Spine2/KORIM:LeftShoulder/KORIM:LeftArm/KORIM:LeftForeArm
+        weight: 1
+      - path: KORIM:Hips/KORIM:Spine/KORIM:Spine1/KORIM:Spine2/KORIM:LeftShoulder/KORIM:LeftArm/KORIM:LeftForeArm/KORIM:LeftHand
+        weight: 1
+      - path: KORIM:Hips/KORIM:Spine/KORIM:Spine1/KORIM:Spine2/KORIM:LeftShoulder/KORIM:LeftArm/KORIM:LeftForeArm/KORIM:LeftHand/KORIM:LeftHandIndex1
+        weight: 1
+      - path: KORIM:Hips/KORIM:Spine/KORIM:Spine1/KORIM:Spine2/KORIM:LeftShoulder/KORIM:LeftArm/KORIM:LeftForeArm/KORIM:LeftHand/KORIM:LeftHandIndex1/KORIM:LeftHandIndex2
+        weight: 1
+      - path: KORIM:Hips/KORIM:Spine/KORIM:Spine1/KORIM:Spine2/KORIM:LeftShoulder/KORIM:LeftArm/KORIM:LeftForeArm/KORIM:LeftHand/KORIM:LeftHandIndex1/KORIM:LeftHandIndex2/KORIM:LeftHandIndex3
+        weight: 1
+      - path: KORIM:Hips/KORIM:Spine/KORIM:Spine1/KORIM:Spine2/KORIM:LeftShoulder/KORIM:LeftArm/KORIM:LeftForeArm/KORIM:LeftHand/KORIM:LeftHandIndex1/KORIM:LeftHandIndex2/KORIM:LeftHandIndex3/KORIM:LeftHandIndex4
+        weight: 0
+      - path: KORIM:Hips/KORIM:Spine/KORIM:Spine1/KORIM:Spine2/KORIM:LeftShoulder/KORIM:LeftArm/KORIM:LeftForeArm/KORIM:LeftHand/KORIM:LeftHandMiddle1
+        weight: 1
+      - path: KORIM:Hips/KORIM:Spine/KORIM:Spine1/KORIM:Spine2/KORIM:LeftShoulder/KORIM:LeftArm/KORIM:LeftForeArm/KORIM:LeftHand/KORIM:LeftHandMiddle1/KORIM:LeftHandMiddle2
+        weight: 1
+      - path: KORIM:Hips/KORIM:Spine/KORIM:Spine1/KORIM:Spine2/KORIM:LeftShoulder/KORIM:LeftArm/KORIM:LeftForeArm/KORIM:LeftHand/KORIM:LeftHandMiddle1/KORIM:LeftHandMiddle2/KORIM:LeftHandMiddle3
+        weight: 1
+      - path: KORIM:Hips/KORIM:Spine/KORIM:Spine1/KORIM:Spine2/KORIM:LeftShoulder/KORIM:LeftArm/KORIM:LeftForeArm/KORIM:LeftHand/KORIM:LeftHandMiddle1/KORIM:LeftHandMiddle2/KORIM:LeftHandMiddle3/KORIM:LeftHandMiddle4
+        weight: 0
+      - path: KORIM:Hips/KORIM:Spine/KORIM:Spine1/KORIM:Spine2/KORIM:LeftShoulder/KORIM:LeftArm/KORIM:LeftForeArm/KORIM:LeftHand/KORIM:LeftHandPinky1
+        weight: 1
+      - path: KORIM:Hips/KORIM:Spine/KORIM:Spine1/KORIM:Spine2/KORIM:LeftShoulder/KORIM:LeftArm/KORIM:LeftForeArm/KORIM:LeftHand/KORIM:LeftHandPinky1/KORIM:LeftHandPinky2
+        weight: 1
+      - path: KORIM:Hips/KORIM:Spine/KORIM:Spine1/KORIM:Spine2/KORIM:LeftShoulder/KORIM:LeftArm/KORIM:LeftForeArm/KORIM:LeftHand/KORIM:LeftHandPinky1/KORIM:LeftHandPinky2/KORIM:LeftHandPinky3
+        weight: 1
+      - path: KORIM:Hips/KORIM:Spine/KORIM:Spine1/KORIM:Spine2/KORIM:LeftShoulder/KORIM:LeftArm/KORIM:LeftForeArm/KORIM:LeftHand/KORIM:LeftHandPinky1/KORIM:LeftHandPinky2/KORIM:LeftHandPinky3/KORIM:LeftHandPinky4
+        weight: 0
+      - path: KORIM:Hips/KORIM:Spine/KORIM:Spine1/KORIM:Spine2/KORIM:LeftShoulder/KORIM:LeftArm/KORIM:LeftForeArm/KORIM:LeftHand/KORIM:LeftHandRing1
+        weight: 1
+      - path: KORIM:Hips/KORIM:Spine/KORIM:Spine1/KORIM:Spine2/KORIM:LeftShoulder/KORIM:LeftArm/KORIM:LeftForeArm/KORIM:LeftHand/KORIM:LeftHandRing1/KORIM:LeftHandRing2
+        weight: 1
+      - path: KORIM:Hips/KORIM:Spine/KORIM:Spine1/KORIM:Spine2/KORIM:LeftShoulder/KORIM:LeftArm/KORIM:LeftForeArm/KORIM:LeftHand/KORIM:LeftHandRing1/KORIM:LeftHandRing2/KORIM:LeftHandRing3
+        weight: 1
+      - path: KORIM:Hips/KORIM:Spine/KORIM:Spine1/KORIM:Spine2/KORIM:LeftShoulder/KORIM:LeftArm/KORIM:LeftForeArm/KORIM:LeftHand/KORIM:LeftHandRing1/KORIM:LeftHandRing2/KORIM:LeftHandRing3/KORIM:LeftHandRing4
+        weight: 0
+      - path: KORIM:Hips/KORIM:Spine/KORIM:Spine1/KORIM:Spine2/KORIM:LeftShoulder/KORIM:LeftArm/KORIM:LeftForeArm/KORIM:LeftHand/KORIM:LeftHandThumb1
+        weight: 1
+      - path: KORIM:Hips/KORIM:Spine/KORIM:Spine1/KORIM:Spine2/KORIM:LeftShoulder/KORIM:LeftArm/KORIM:LeftForeArm/KORIM:LeftHand/KORIM:LeftHandThumb1/KORIM:LeftHandThumb2
+        weight: 1
+      - path: KORIM:Hips/KORIM:Spine/KORIM:Spine1/KORIM:Spine2/KORIM:LeftShoulder/KORIM:LeftArm/KORIM:LeftForeArm/KORIM:LeftHand/KORIM:LeftHandThumb1/KORIM:LeftHandThumb2/KORIM:LeftHandThumb3
+        weight: 1
+      - path: KORIM:Hips/KORIM:Spine/KORIM:Spine1/KORIM:Spine2/KORIM:LeftShoulder/KORIM:LeftArm/KORIM:LeftForeArm/KORIM:LeftHand/KORIM:LeftHandThumb1/KORIM:LeftHandThumb2/KORIM:LeftHandThumb3/KORIM:LeftHandThumb4
+        weight: 0
+      - path: KORIM:Hips/KORIM:Spine/KORIM:Spine1/KORIM:Spine2/KORIM:Neck
+        weight: 1
+      - path: KORIM:Hips/KORIM:Spine/KORIM:Spine1/KORIM:Spine2/KORIM:Neck/KORIM:Head
+        weight: 1
+      - path: KORIM:Hips/KORIM:Spine/KORIM:Spine1/KORIM:Spine2/KORIM:Neck/KORIM:Head/KORIM:HeadTop_End
+        weight: 0
+      - path: KORIM:Hips/KORIM:Spine/KORIM:Spine1/KORIM:Spine2/KORIM:RightShoulder
+        weight: 1
+      - path: KORIM:Hips/KORIM:Spine/KORIM:Spine1/KORIM:Spine2/KORIM:RightShoulder/KORIM:RightArm
+        weight: 1
+      - path: KORIM:Hips/KORIM:Spine/KORIM:Spine1/KORIM:Spine2/KORIM:RightShoulder/KORIM:RightArm/KORIM:RightForeArm
+        weight: 1
+      - path: KORIM:Hips/KORIM:Spine/KORIM:Spine1/KORIM:Spine2/KORIM:RightShoulder/KORIM:RightArm/KORIM:RightForeArm/KORIM:RightHand
+        weight: 1
+      - path: KORIM:Hips/KORIM:Spine/KORIM:Spine1/KORIM:Spine2/KORIM:RightShoulder/KORIM:RightArm/KORIM:RightForeArm/KORIM:RightHand/KORIM:RightHandIndex1
+        weight: 1
+      - path: KORIM:Hips/KORIM:Spine/KORIM:Spine1/KORIM:Spine2/KORIM:RightShoulder/KORIM:RightArm/KORIM:RightForeArm/KORIM:RightHand/KORIM:RightHandIndex1/KORIM:RightHandIndex2
+        weight: 1
+      - path: KORIM:Hips/KORIM:Spine/KORIM:Spine1/KORIM:Spine2/KORIM:RightShoulder/KORIM:RightArm/KORIM:RightForeArm/KORIM:RightHand/KORIM:RightHandIndex1/KORIM:RightHandIndex2/KORIM:RightHandIndex3
+        weight: 1
+      - path: KORIM:Hips/KORIM:Spine/KORIM:Spine1/KORIM:Spine2/KORIM:RightShoulder/KORIM:RightArm/KORIM:RightForeArm/KORIM:RightHand/KORIM:RightHandIndex1/KORIM:RightHandIndex2/KORIM:RightHandIndex3/KORIM:RightHandIndex4
+        weight: 0
+      - path: KORIM:Hips/KORIM:Spine/KORIM:Spine1/KORIM:Spine2/KORIM:RightShoulder/KORIM:RightArm/KORIM:RightForeArm/KORIM:RightHand/KORIM:RightHandMiddle1
+        weight: 1
+      - path: KORIM:Hips/KORIM:Spine/KORIM:Spine1/KORIM:Spine2/KORIM:RightShoulder/KORIM:RightArm/KORIM:RightForeArm/KORIM:RightHand/KORIM:RightHandMiddle1/KORIM:RightHandMiddle2
+        weight: 1
+      - path: KORIM:Hips/KORIM:Spine/KORIM:Spine1/KORIM:Spine2/KORIM:RightShoulder/KORIM:RightArm/KORIM:RightForeArm/KORIM:RightHand/KORIM:RightHandMiddle1/KORIM:RightHandMiddle2/KORIM:RightHandMiddle3
+        weight: 1
+      - path: KORIM:Hips/KORIM:Spine/KORIM:Spine1/KORIM:Spine2/KORIM:RightShoulder/KORIM:RightArm/KORIM:RightForeArm/KORIM:RightHand/KORIM:RightHandMiddle1/KORIM:RightHandMiddle2/KORIM:RightHandMiddle3/KORIM:RightHandMiddle4
+        weight: 0
+      - path: KORIM:Hips/KORIM:Spine/KORIM:Spine1/KORIM:Spine2/KORIM:RightShoulder/KORIM:RightArm/KORIM:RightForeArm/KORIM:RightHand/KORIM:RightHandPinky1
+        weight: 1
+      - path: KORIM:Hips/KORIM:Spine/KORIM:Spine1/KORIM:Spine2/KORIM:RightShoulder/KORIM:RightArm/KORIM:RightForeArm/KORIM:RightHand/KORIM:RightHandPinky1/KORIM:RightHandPinky2
+        weight: 1
+      - path: KORIM:Hips/KORIM:Spine/KORIM:Spine1/KORIM:Spine2/KORIM:RightShoulder/KORIM:RightArm/KORIM:RightForeArm/KORIM:RightHand/KORIM:RightHandPinky1/KORIM:RightHandPinky2/KORIM:RightHandPinky3
+        weight: 1
+      - path: KORIM:Hips/KORIM:Spine/KORIM:Spine1/KORIM:Spine2/KORIM:RightShoulder/KORIM:RightArm/KORIM:RightForeArm/KORIM:RightHand/KORIM:RightHandPinky1/KORIM:RightHandPinky2/KORIM:RightHandPinky3/KORIM:RightHandPinky4
+        weight: 0
+      - path: KORIM:Hips/KORIM:Spine/KORIM:Spine1/KORIM:Spine2/KORIM:RightShoulder/KORIM:RightArm/KORIM:RightForeArm/KORIM:RightHand/KORIM:RightHandRing1
+        weight: 1
+      - path: KORIM:Hips/KORIM:Spine/KORIM:Spine1/KORIM:Spine2/KORIM:RightShoulder/KORIM:RightArm/KORIM:RightForeArm/KORIM:RightHand/KORIM:RightHandRing1/KORIM:RightHandRing2
+        weight: 1
+      - path: KORIM:Hips/KORIM:Spine/KORIM:Spine1/KORIM:Spine2/KORIM:RightShoulder/KORIM:RightArm/KORIM:RightForeArm/KORIM:RightHand/KORIM:RightHandRing1/KORIM:RightHandRing2/KORIM:RightHandRing3
+        weight: 1
+      - path: KORIM:Hips/KORIM:Spine/KORIM:Spine1/KORIM:Spine2/KORIM:RightShoulder/KORIM:RightArm/KORIM:RightForeArm/KORIM:RightHand/KORIM:RightHandRing1/KORIM:RightHandRing2/KORIM:RightHandRing3/KORIM:RightHandRing4
+        weight: 0
+      - path: KORIM:Hips/KORIM:Spine/KORIM:Spine1/KORIM:Spine2/KORIM:RightShoulder/KORIM:RightArm/KORIM:RightForeArm/KORIM:RightHand/KORIM:RightHandThumb1
+        weight: 1
+      - path: KORIM:Hips/KORIM:Spine/KORIM:Spine1/KORIM:Spine2/KORIM:RightShoulder/KORIM:RightArm/KORIM:RightForeArm/KORIM:RightHand/KORIM:RightHandThumb1/KORIM:RightHandThumb2
+        weight: 1
+      - path: KORIM:Hips/KORIM:Spine/KORIM:Spine1/KORIM:Spine2/KORIM:RightShoulder/KORIM:RightArm/KORIM:RightForeArm/KORIM:RightHand/KORIM:RightHandThumb1/KORIM:RightHandThumb2/KORIM:RightHandThumb3
+        weight: 1
+      - path: KORIM:Hips/KORIM:Spine/KORIM:Spine1/KORIM:Spine2/KORIM:RightShoulder/KORIM:RightArm/KORIM:RightForeArm/KORIM:RightHand/KORIM:RightHandThumb1/KORIM:RightHandThumb2/KORIM:RightHandThumb3/KORIM:RightHandThumb4
+        weight: 0
+      - path: KORIM:Hips/KORIM:Spine/KORIM:Spine1/KORIM:Spine2/KORIM:RightShoulder/KORIM:RightArm/KORIM:RightForeArm/KORIM:RightHand/stain_gun3
+        weight: 0
+      - path: KORIM:KORIM_polySurface15_01
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 0
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 4
+    normalCalculationMode: 0
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human:
+    - boneName: KORIM:Hips
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: KORIM:LeftUpLeg
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: KORIM:RightUpLeg
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: KORIM:LeftLeg
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: KORIM:RightLeg
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: KORIM:LeftFoot
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: KORIM:RightFoot
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: KORIM:Spine
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: KORIM:Spine1
+      humanName: Chest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: KORIM:Neck
+      humanName: Neck
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: KORIM:Head
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: KORIM:LeftShoulder
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: KORIM:RightShoulder
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: KORIM:LeftArm
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: KORIM:RightArm
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: KORIM:LeftForeArm
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: KORIM:RightForeArm
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: KORIM:LeftHand
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: KORIM:RightHand
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: KORIM:LeftToeBase
+      humanName: LeftToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: KORIM:RightToeBase
+      humanName: RightToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: KORIM:LeftHandThumb1
+      humanName: Left Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: KORIM:LeftHandThumb2
+      humanName: Left Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: KORIM:LeftHandThumb3
+      humanName: Left Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: KORIM:LeftHandIndex1
+      humanName: Left Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: KORIM:LeftHandIndex2
+      humanName: Left Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: KORIM:LeftHandIndex3
+      humanName: Left Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: KORIM:LeftHandMiddle1
+      humanName: Left Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: KORIM:LeftHandMiddle2
+      humanName: Left Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: KORIM:LeftHandMiddle3
+      humanName: Left Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: KORIM:LeftHandRing1
+      humanName: Left Ring Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: KORIM:LeftHandRing2
+      humanName: Left Ring Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: KORIM:LeftHandRing3
+      humanName: Left Ring Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: KORIM:LeftHandPinky1
+      humanName: Left Little Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: KORIM:LeftHandPinky2
+      humanName: Left Little Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: KORIM:LeftHandPinky3
+      humanName: Left Little Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: KORIM:RightHandThumb1
+      humanName: Right Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: KORIM:RightHandThumb2
+      humanName: Right Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: KORIM:RightHandThumb3
+      humanName: Right Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: KORIM:RightHandIndex1
+      humanName: Right Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: KORIM:RightHandIndex2
+      humanName: Right Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: KORIM:RightHandIndex3
+      humanName: Right Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: KORIM:RightHandMiddle1
+      humanName: Right Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: KORIM:RightHandMiddle2
+      humanName: Right Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: KORIM:RightHandMiddle3
+      humanName: Right Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: KORIM:RightHandRing1
+      humanName: Right Ring Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: KORIM:RightHandRing2
+      humanName: Right Ring Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: KORIM:RightHandRing3
+      humanName: Right Ring Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: KORIM:RightHandPinky1
+      humanName: Right Little Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: KORIM:RightHandPinky2
+      humanName: Right Little Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: KORIM:RightHandPinky3
+      humanName: Right Little Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: karim hide new(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Character
+      parentName: 
+      position: {x: 0.00079566956, y: 0.0037135174, z: 0.0321538}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Joint_GRP
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bind_Joint_GRP
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: KORIM:KORIM_polySurface15_01
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: KORIM:Hips
+      parentName: 
+      position: {x: 0, y: 0.9966265, z: -0.037761874}
+      rotation: {x: -9.486769e-16, y: -0.000000011641532, z: 0.000000034924597, w: 1}
+      scale: {x: 0.9999999, y: 0.9999998, z: 1}
+    - name: KORIM:LeftUpLeg
+      parentName: 
+      position: {x: -0.09524956, y: -0.05726242, z: -0.004646938}
+      rotation: {x: 0.0000056078607, y: -0.014365639, z: 0.99989676, w: 0.00038851425}
+      scale: {x: 1.0000002, y: 1, z: 0.99999994}
+    - name: KORIM:LeftLeg
+      parentName: 
+      position: {x: -1.2849987e-12, y: 0.43199816, z: 1.8836498e-10}
+      rotation: {x: 0.017003478, y: 0.00022477064, z: 0.0132156545, w: 0.9997681}
+      scale: {x: 0.9999996, y: 1, z: 1.0000001}
+    - name: KORIM:LeftFoot
+      parentName: 
+      position: {x: -5.3179094e-10, y: 0.403704, z: 8.105047e-11}
+      rotation: {x: 0.49111065, y: -0.016695408, z: 0.009414924, w: 0.8708863}
+      scale: {x: 1.0000002, y: 0.99999976, z: 1}
+    - name: KORIM:LeftToeBase
+      parentName: 
+      position: {x: -1.160863e-10, y: 0.14966936, z: -0.0000000040882027}
+      rotation: {x: 0.25805455, y: -0.09524803, z: 0.025574345, w: 0.96108353}
+      scale: {x: 1.0000001, y: 1, z: 1.0000002}
+    - name: KORIM:LeftToe_End
+      parentName: 
+      position: {x: -3.5916525e-10, y: 0.05896025, z: 6.863074e-11}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: KORIM:RightUpLeg
+      parentName: 
+      position: {x: 0.09524956, y: -0.05726242, z: 0.0015977168}
+      rotation: {x: -0.000007786058, y: -0.020038525, z: 0.99979913, w: -0.00038826364}
+      scale: {x: 1, y: 0.99999994, z: 0.9999999}
+    - name: KORIM:RightLeg
+      parentName: 
+      position: {x: -0, y: 0.43216696, z: -9.833676e-10}
+      rotation: {x: 0.020376967, y: -0.00026940316, z: -0.013218089, w: 0.99970496}
+      scale: {x: 1, y: 1.0000002, z: 1.0000001}
+    - name: KORIM:RightFoot
+      parentName: 
+      position: {x: 3.6961106e-10, y: 0.40369844, z: 2.4501644e-12}
+      rotation: {x: 0.4950512, y: 0.016569072, z: -0.009442823, w: 0.8686545}
+      scale: {x: 0.9999999, y: 1, z: 0.9999999}
+    - name: KORIM:RightToeBase
+      parentName: 
+      position: {x: -2.639737e-10, y: 0.15079834, z: -0.0000000026628322}
+      rotation: {x: 0.25590926, y: 0.09838589, z: -0.026190784, w: 0.96132445}
+      scale: {x: 1, y: 0.9999999, z: 0.99999994}
+    - name: KORIM:RightToe_End
+      parentName: 
+      position: {x: -9.779292e-11, y: 0.058141872, z: -3.862804e-11}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: KORIM:Spine
+      parentName: 
+      position: {x: -0, y: 0.102972485, z: -0.007395787}
+      rotation: {x: -0.03584221, y: 0.0000000145548595, z: -0.0000000810211, w: 0.99935746}
+      scale: {x: 1, y: 0.99999994, z: 0.9999999}
+    - name: KORIM:Spine1
+      parentName: 
+      position: {x: -0, y: 0.12044404, z: -2.7556182e-10}
+      rotation: {x: -0.000000014901161, y: 0.0000000012349441, z: 0.000000023431735,
+        w: 1}
+      scale: {x: 1, y: 1.0000001, z: 1}
+    - name: KORIM:Spine2
+      parentName: 
+      position: {x: -0, y: 0.13765042, z: -2.0619836e-10}
+      rotation: {x: 0.000000011175871, y: 0.0000000029029055, z: 2.0849668e-10, w: 1}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: KORIM:LeftShoulder
+      parentName: 
+      position: {x: -0.06555343, y: 0.1368903, z: -0.0012468501}
+      rotation: {x: 0.55620444, y: -0.43373984, z: 0.566805, w: 0.42572126}
+      scale: {x: 0.9999997, y: 0.99999976, z: 0.9999997}
+    - name: KORIM:LeftArm
+      parentName: 
+      position: {x: 8.3759985e-11, y: 0.1342228, z: -0.0000000011707567}
+      rotation: {x: -0.095210254, y: -0.0029876824, z: 0.014143942, w: 0.9953522}
+      scale: {x: 1, y: 1.0000001, z: 1.0000002}
+    - name: KORIM:LeftForeArm
+      parentName: 
+      position: {x: -2.2096192e-10, y: 0.228769, z: 4.2502052e-10}
+      rotation: {x: -0.05651053, y: 0.0036781426, z: -0.05142706, w: 0.99706984}
+      scale: {x: 1.0000004, y: 0.9999999, z: 1.0000001}
+    - name: KORIM:LeftHand
+      parentName: 
+      position: {x: 1.7740388e-10, y: 0.27098015, z: 1.25425e-11}
+      rotation: {x: 0.030268759, y: 0.039960906, z: 0.03380707, w: 0.9981704}
+      scale: {x: 0.9999999, y: 1.0000001, z: 1.0000002}
+    - name: KORIM:LeftHandThumb1
+      parentName: 
+      position: {x: 0.034461655, y: 0.04316094, z: 0.019203471}
+      rotation: {x: 0.11531444, y: -0.018395526, z: -0.31467393, w: 0.9419896}
+      scale: {x: 0.99999994, y: 0.9999999, z: 0.99999994}
+    - name: KORIM:LeftHandThumb2
+      parentName: 
+      position: {x: 0.005321907, y: 0.04647574, z: -5.171046e-10}
+      rotation: {x: 0.025112027, y: 0.0014219877, z: -0.036314122, w: 0.9990239}
+      scale: {x: 1, y: 1, z: 1}
+    - name: KORIM:LeftHandThumb3
+      parentName: 
+      position: {x: -0.00074927456, y: 0.038795214, z: -0.0000000011396531}
+      rotation: {x: -0.028041746, y: 0.0038570012, z: -0.0425105, w: 0.998695}
+      scale: {x: 1, y: 1, z: 1}
+    - name: KORIM:LeftHandThumb4
+      parentName: 
+      position: {x: -0.004572633, y: 0.028595943, z: -1.4660628e-10}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: KORIM:LeftHandRing1
+      parentName: 
+      position: {x: -0.011844079, y: 0.12786993, z: -0.0011589399}
+      rotation: {x: -0.001287162, y: -0.000008970497, z: 0.007173164, w: 0.9999735}
+      scale: {x: 0.9999999, y: 1.0000001, z: 1}
+    - name: KORIM:LeftHandRing2
+      parentName: 
+      position: {x: 0.00016676437, y: 0.036568105, z: 2.8598492e-11}
+      rotation: {x: 0.031585317, y: -0.0000002980232, z: 0.00000008940696, w: 0.99950105}
+      scale: {x: 1.0000002, y: 1, z: 0.9999999}
+    - name: KORIM:LeftHandRing3
+      parentName: 
+      position: {x: -0.0000011085277, y: 0.03400248, z: -1.9505705e-10}
+      rotation: {x: 0.037203457, y: 0.00000032782552, z: -0.0000000745058, w: 0.99930775}
+      scale: {x: 0.99999994, y: 0.99999994, z: 0.9999997}
+    - name: KORIM:LeftHandRing4
+      parentName: 
+      position: {x: -0.00016565628, y: 0.03040873, z: -3.2395206e-10}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: KORIM:LeftHandPinky1
+      parentName: 
+      position: {x: -0.03699959, y: 0.11492709, z: 0.0009936299}
+      rotation: {x: 0.017835971, y: -0.00025838608, z: -0.014495846, w: 0.99973583}
+      scale: {x: 1.0000002, y: 1, z: 1.0000001}
+    - name: KORIM:LeftHandPinky2
+      parentName: 
+      position: {x: 0.000033768516, y: 0.03647425, z: 5.771852e-11}
+      rotation: {x: -0.011842353, y: 0.0000001490116, z: 0.000000029802319, w: 0.99992996}
+      scale: {x: 0.9999997, y: 1.0000002, z: 0.9999994}
+    - name: KORIM:LeftHandPinky3
+      parentName: 
+      position: {x: 0.00007827008, y: 0.030009173, z: 1.7828682e-10}
+      rotation: {x: 0.041061655, y: -0.0000064671017, z: -0.0005615948, w: 0.99915653}
+      scale: {x: 1.0000001, y: 0.99999976, z: 1.0000002}
+    - name: KORIM:LeftHandPinky4
+      parentName: 
+      position: {x: -0.00011203864, y: 0.02626242, z: 6.035435e-11}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: KORIM:LeftHandMiddle1
+      parentName: 
+      position: {x: 0.011089415, y: 0.1277306, z: -0.0015700731}
+      rotation: {x: 0.010976895, y: -0.00007641315, z: -0.00695902, w: 0.9999156}
+      scale: {x: 0.99999976, y: 0.9999997, z: 0.9999998}
+    - name: KORIM:LeftHandMiddle2
+      parentName: 
+      position: {x: 0.00026924396, y: 0.03824468, z: 2.897505e-10}
+      rotation: {x: 0.03376744, y: 0.00000020861621, z: -0.000000014901158, w: 0.99942976}
+      scale: {x: 1.0000001, y: 1.0000002, z: 0.99999994}
+    - name: KORIM:LeftHandMiddle3
+      parentName: 
+      position: {x: 0.00007707502, y: 0.03650074, z: 2.7967018e-10}
+      rotation: {x: 0.038905583, y: -0.00024291867, z: -0.0038506975, w: 0.99923545}
+      scale: {x: 1.0000001, y: 1, z: 1.0000002}
+    - name: KORIM:LeftHandMiddle4
+      parentName: 
+      position: {x: -0.00034631894, y: 0.0308612, z: 6.462309e-10}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: KORIM:LeftHandIndex1
+      parentName: 
+      position: {x: 0.037754256, y: 0.12222101, z: 0.00052102277}
+      rotation: {x: 0.039335042, y: 0.00013595815, z: 0.0034433294, w: 0.99922013}
+      scale: {x: 0.99999994, y: 1, z: 0.99999976}
+    - name: KORIM:LeftHandIndex2
+      parentName: 
+      position: {x: 0.00023101392, y: 0.037021536, z: 5.0206095e-10}
+      rotation: {x: 0.041287825, y: 0.0000043213367, z: -0.0001758039, w: 0.9991473}
+      scale: {x: 1, y: 1.0000002, z: 0.99999994}
+    - name: KORIM:LeftHandIndex3
+      parentName: 
+      position: {x: -0.00004921467, y: 0.03355894, z: -9.643554e-10}
+      rotation: {x: 0.035100937, y: 0.00000008940697, z: 0, w: 0.9993838}
+      scale: {x: 0.99999946, y: 0.9999998, z: 0.9999999}
+    - name: KORIM:LeftHandIndex4
+      parentName: 
+      position: {x: -0.00018179906, y: 0.030169636, z: -4.7600396e-10}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: KORIM:Neck
+      parentName: 
+      position: {x: -0, y: 0.1548565, z: -0.00000001425063}
+      rotation: {x: 0.035842214, y: -0.0000000066515424, z: 0.000000023059467, w: 0.99935746}
+      scale: {x: 0.99999994, y: 1, z: 1.0000001}
+    - name: KORIM:Head
+      parentName: 
+      position: {x: -0, y: 0.076395564, z: 0.031782087}
+      rotation: {x: -0.000000023283064, y: -0.000000005820767, z: -0.000000005820767,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: KORIM:HeadTop_End
+      parentName: 
+      position: {x: -0, y: 0.22180724, z: 0.0922763}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: KORIM:RightShoulder
+      parentName: 
+      position: {x: 0.06555343, y: 0.13689654, z: -0.001333497}
+      rotation: {x: -0.55580676, y: -0.43405327, z: 0.56715375, w: -0.42545646}
+      scale: {x: 1, y: 1, z: 0.9999998}
+    - name: KORIM:RightArm
+      parentName: 
+      position: {x: -0, y: 0.134223, z: 0}
+      rotation: {x: -0.09754336, y: 0.0032289322, z: -0.003652885, w: 0.99521935}
+      scale: {x: 3.0000002, y: 2.9999993, z: 3}
+    - name: KORIM:RightForeArm
+      parentName: 
+      position: {x: -0, y: 0.22870399, z: 0}
+      rotation: {x: 0.058833808, y: 0.0033915788, z: -0.05429949, w: -0.9967842}
+      scale: {x: 2.9999993, y: 3.0000002, z: 3.0000005}
+    - name: KORIM:RightHand
+      parentName: 
+      position: {x: -0, y: 0.27099198, z: 0}
+      rotation: {x: -0.060884662, y: 0.039584953, z: 0.040949184, w: -0.9965186}
+      scale: {x: 3, y: 3.0000005, z: 3.0000005}
+    - name: stain_gun3
+      parentName: 
+      position: {x: -0.0854758, y: -0.20060873, z: 0.19847709}
+      rotation: {x: -0.547801, y: 0.5587911, z: 0.45505428, w: 0.42496136}
+      scale: {x: 2, y: 2, z: 2}
+    - name: KORIM:RightHandThumb1
+      parentName: 
+      position: {x: -0.03286, y: 0.042214997, z: 0.019611}
+      rotation: {x: -0.11814957, y: -0.015842719, z: -0.3123503, w: -0.94245803}
+      scale: {x: 3.0000005, y: 3.0000002, z: 3}
+    - name: KORIM:RightHandThumb2
+      parentName: 
+      position: {x: -0.005308, y: 0.045272, z: 0}
+      rotation: {x: 0.011667881, y: -0.0004538594, z: 0.03201812, w: 0.9994191}
+      scale: {x: 3.0000002, y: 3, z: 3.0000002}
+    - name: KORIM:RightHandThumb3
+      parentName: 
+      position: {x: 0.00094999996, y: 0.039901998, z: 0}
+      rotation: {x: -0.02751536, y: -0.0016162839, z: 0.022824856, w: 0.9993595}
+      scale: {x: 3, y: 2.9999993, z: 3}
+    - name: KORIM:RightHandThumb4
+      parentName: 
+      position: {x: 0.0043579997, y: 0.033828, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 3, y: 3, z: 3}
+    - name: KORIM:RightHandMiddle1
+      parentName: 
+      position: {x: -0.010780999, y: 0.12751399, z: -0.00125}
+      rotation: {x: 0.006297468, y: 0.00015276669, z: -0.024287235, w: -0.99968517}
+      scale: {x: 3.0000007, y: 2.9999995, z: 2.9999998}
+    - name: KORIM:RightHandMiddle2
+      parentName: 
+      position: {x: -0.00010099999, y: 0.038785, z: 0}
+      rotation: {x: 0.016180258, y: -0.00000005960463, z: -0.000000029802315, w: 0.9998691}
+      scale: {x: 3.0000002, y: 3.0000007, z: 3.0000005}
+    - name: KORIM:RightHandMiddle3
+      parentName: 
+      position: {x: -0.000027999999, y: 0.036473, z: 0}
+      rotation: {x: -0.041062098, y: -0.000000119209275, z: -0.000000119209275, w: -0.9991566}
+      scale: {x: 3.0000002, y: 2.9999993, z: 3}
+    - name: KORIM:RightHandMiddle4
+      parentName: 
+      position: {x: 0.000128, y: 0.032887, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 3, y: 3, z: 3}
+    - name: KORIM:RightHandRing1
+      parentName: 
+      position: {x: 0.01232, y: 0.128217, z: 0.000494}
+      rotation: {x: 0.038314477, y: 0.0004003346, z: -0.010453224, w: -0.9992111}
+      scale: {x: 2.9999998, y: 2.9999993, z: 2.9999993}
+    - name: KORIM:RightHandRing2
+      parentName: 
+      position: {x: -0.00016899999, y: 0.035713997, z: 0}
+      rotation: {x: 0.033964973, y: -0.00000038743013, z: -0.000000059604638, w: 0.999423}
+      scale: {x: 3.0000007, y: 2.9999998, z: 2.9999998}
+    - name: KORIM:RightHandRing3
+      parentName: 
+      position: {x: -0.000028999999, y: 0.034323998, z: 0}
+      rotation: {x: -0.040288445, y: -0.00007274743, z: -0.001434549, w: -0.9991871}
+      scale: {x: 3.0000002, y: 3, z: 3}
+    - name: KORIM:RightHandRing4
+      parentName: 
+      position: {x: 0.000198, y: 0.029813001, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 3, y: 3, z: 3}
+    - name: KORIM:RightHandPinky1
+      parentName: 
+      position: {x: 0.036059998, y: 0.118150994, z: 0.001176}
+      rotation: {x: 0.0049489886, y: 0.000019192696, z: -0.0039361864, w: -0.99998003}
+      scale: {x: 3, y: 2.9999995, z: 2.9999998}
+    - name: KORIM:RightHandPinky2
+      parentName: 
+      position: {x: -0.000006, y: 0.035206, z: 0}
+      rotation: {x: -0.013213441, y: -0.00000020861626, z: 0, w: 0.99991274}
+      scale: {x: 3.0000002, y: 3.0000005, z: 2.9999998}
+    - name: KORIM:RightHandPinky3
+      parentName: 
+      position: {x: -0.000052999996, y: 0.029868, z: 0}
+      rotation: {x: -0.034492176, y: -0.00000026822087, z: -0.000000029802319, w: -0.999405}
+      scale: {x: 2.9999998, y: 2.9999993, z: 3}
+    - name: KORIM:RightHandPinky4
+      parentName: 
+      position: {x: 0.000059, y: 0.025973, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 3, y: 3, z: 3}
+    - name: KORIM:RightHandIndex1
+      parentName: 
+      position: {x: -0.037599, y: 0.125819, z: 0.000741}
+      rotation: {x: 0.022012562, y: 0.000058621168, z: 0.0026614815, w: 0.9997542}
+      scale: {x: 2.9999995, y: 3.0000002, z: 2.9999998}
+    - name: KORIM:RightHandIndex2
+      parentName: 
+      position: {x: -0.000049, y: 0.034644, z: 0}
+      rotation: {x: 0.032920867, y: 0.00000008940697, z: 0.000000014901161, w: 0.99945796}
+      scale: {x: 3.0000005, y: 3.0000005, z: 3.0000012}
+    - name: KORIM:RightHandIndex3
+      parentName: 
+      position: {x: 0.000092, y: 0.033649, z: 0}
+      rotation: {x: -0.036306452, y: 0.000000029802319, z: -0.00000016391276, w: 0.9993408}
+      scale: {x: 3, y: 2.9999995, z: 2.9999995}
+    - name: KORIM:RightHandIndex4
+      parentName: 
+      position: {x: -0.000044, y: 0.030028999, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 3, y: 3, z: 3}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 3
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
