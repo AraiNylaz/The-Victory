@@ -638,7 +638,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 89849d67a472bca4eb2e02457c7bf69b, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.25
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -743,10 +743,11 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 513
+  damageOverlay: {fileID: 0}
+  crosshair: {fileID: 0}
   healthText: {fileID: 0}
   rescueText: {fileID: 0}
-  crosshair: {fileID: 0}
-  damageOverlay: {fileID: 0}
+  warnText: {fileID: 0}
   hurtSounds:
   - {fileID: 8300000, guid: 1e7b97a30774a004f93eea1b3ba95577, type: 3}
   - {fileID: 8300000, guid: 23bcc71342ae2eb488977144f11cc54a, type: 3}
