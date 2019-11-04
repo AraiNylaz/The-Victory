@@ -9,21 +9,29 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] private AudioClip hurtSound = null;
     [SerializeField] private AudioClip deathSound = null;
 
-    [Header("Setup")]
-    public Transform bloodPoint = null;
-
+    private new Collider collider;
     private AudioSource audioSource;
+    private EnemyController enemyController;
     private long health = 100;
+    [HideInInspector] public bool dead = false;
 
     void Start()
     {
+        collider = GetComponent<Collider>();
         audioSource = GetComponent<AudioSource>();
+        enemyController = GetComponent<EnemyController>();
         health = maxHealth;
+        dead = false;
     }
 
     void Update()
     {
-        if (health <= 0) Destroy(gameObject);
+        if (health <= 0 && !dead)
+        {
+            dead = true;
+            if (collider) collider.enabled = false;
+            if (enemyController) enemyController.playDeathAnimation();
+        }
         if (health < 0)
         {
             health = 0;
@@ -35,7 +43,7 @@ public class EnemyHealth : MonoBehaviour
 
     public void takeDamage(long damage)
     {
-        if (health > 0)
+        if (health > 0 && !dead)
         {
             if (damage > 0)
             {
