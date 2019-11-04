@@ -13,10 +13,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private LayerMask groundLayer = 0;
 
     [Header("UI")]
+    [SerializeField] private Image damageOverlay = null;
+    [SerializeField] private Image crosshair = null;
     [SerializeField] private Text healthText = null;
     [SerializeField] private Text rescueText = null;
-    [SerializeField] private Image crosshair = null;
-    [SerializeField] private Image damageOverlay = null;
+    [SerializeField] private Text warnText = null;
 
     [Header("Sound Effects")]
     [SerializeField] private AudioClip[] hurtSounds = new AudioClip[0];
@@ -33,6 +34,7 @@ public class PlayerController : MonoBehaviour
     [HideInInspector] public bool dead = false;
     private bool crouching = false;
     private bool running = false;
+    private int hostagesKilled = 0;
     private bool damaged = false;
     private Vector3 velocity;
     private bool grounded = false;
@@ -48,6 +50,7 @@ public class PlayerController : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         health = maxHealth;
         dead = false;
+        resetWarnText();
         Cursor.lockState = CursorLockMode.Locked;
     }
 
@@ -209,7 +212,7 @@ public class PlayerController : MonoBehaviour
     #region Main Functions
     public void takeDamage(long damage)
     {
-        if (health > 0)
+        if (health > 0 && !dead)
         {
             damaged = true;
             if (damage > 0)
@@ -241,6 +244,27 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void warn()
+    {
+        if (!dead)
+        {
+            ++hostagesKilled;
+            if (hostagesKilled < 2)
+            {
+                warnText.enabled = true;
+                Invoke("resetWarnText", 1.5f);
+            } else
+            {
+                health = 0;
+            }
+        }
+    }
+
+    void resetWarnText()
+    {
+        warnText.enabled = false;
     }
     #endregion
 }
