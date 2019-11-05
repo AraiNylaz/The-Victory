@@ -29,13 +29,8 @@ public class GameController : MonoBehaviour
         int objectivesCompleted = 0;
         foreach (Objective objective in objectives)
         {
-            if (!objective.completed)
-            {
-                objective.isCompleted();
-            } else
-            {
-                ++objectivesCompleted;
-            }
+            objective.isCompleted();
+            if (objective.completed) ++objectivesCompleted;
         }
         if (!gameOver && objectivesCompleted >= objectives.Length) won = true;
         if (gameOver && !won)
