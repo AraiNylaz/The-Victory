@@ -157,7 +157,7 @@ public class PlayerGun : MonoBehaviour
     #region Main Functions
     IEnumerator fire(long damage, float RPM, float spread, int shots, int bulletsFired)
     {
-        if (!firing && !reloading)
+        if (!firing && !reloading && !GameController.instance.gameOver && !GameController.instance.won)
         {
             int c = 0;
             int shotsToFire = bulletsFired;

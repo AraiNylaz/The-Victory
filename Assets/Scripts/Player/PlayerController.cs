@@ -87,9 +87,10 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if (health <= 0 && !dead)
+        if (health <= 0 && !dead && !GameController.instance.gameOver && !GameController.instance.won)
         {
             dead = true;
+            GameController.instance.gameOver = true;
             Camera.main.transform.position = transform.position;
             Camera.main.transform.rotation = transform.rotation;
             Camera.main.transform.Rotate(new Vector3(-15, 0, 85));

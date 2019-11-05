@@ -40,7 +40,7 @@ public class EnemyController : MonoBehaviour
 
     void Update()
     {
-        if (!enemyHealth.dead)
+        if (!enemyHealth.dead && !GameController.instance.gameOver && !GameController.instance.won)
         {
             getPlayer(false);
             if (player)
