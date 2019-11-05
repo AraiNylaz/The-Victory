@@ -735,6 +735,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+  crouchSpeed: 3
   walkSpeed: 6
   runSpeed: 8
   jumpHeight: 1.5
