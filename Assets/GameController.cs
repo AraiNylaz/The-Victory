@@ -5,6 +5,7 @@ public class GameController : MonoBehaviour
 {
     public static GameController instance;
 
+    [SerializeField] private Objective[] objectives = new Objective[0];
     [SerializeField] private Text mainText = null;
 
     [HideInInspector] public bool gameOver = false;
@@ -23,9 +24,20 @@ public class GameController : MonoBehaviour
         won = false;
     }
 
-    // Update is called once per frame
     void Update()
     {
+        int objectivesCompleted = 0;
+        foreach (Objective objective in objectives)
+        {
+            if (!objective.completed)
+            {
+                objective.isCompleted();
+            } else
+            {
+                ++objectivesCompleted;
+            }
+        }
+        if (!gameOver && objectivesCompleted >= objectives.Length) won = true;
         if (gameOver && !won)
         {
             mainText.text = "Game Over!";
