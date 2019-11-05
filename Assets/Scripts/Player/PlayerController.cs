@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private long maxHealth = 100;
     [SerializeField] private float walkSpeed = 5;
     [SerializeField] private float runSpeed = 7; 
+    [SerializeField] private float crouchSpeed = 3;
     [SerializeField] private float jumpHeight = 1.5f;
     [SerializeField] private float crouchHeight = 1.2f;
     [SerializeField] private Vector2 mouseSensitivity = new Vector2(5, 5);
@@ -87,10 +88,10 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if (health <= 0 && !dead && !GameController.instance.gameOver && !GameController.instance.won)
+        if (health <= 0 && !dead)
         {
             dead = true;
-            GameController.instance.gameOver = true;
+            if (!GameController.instance.won) GameController.instance.gameOver = true;
             Camera.main.transform.position = transform.position;
             Camera.main.transform.rotation = transform.rotation;
             Camera.main.transform.Rotate(new Vector3(-15, 0, 85));
@@ -103,18 +104,24 @@ public class PlayerController : MonoBehaviour
         }
         grounded = Physics.CheckSphere(transform.position, 0.4f, groundLayer);
         if (grounded && velocity.y < 0) velocity.y = -2;
-        if (!dead)
+        if (!dead && !GameController.instance.gameOver && !GameController.instance.won)
         {
             float moveHorizontal = Input.GetAxisRaw("Horizontal");
             float moveVertical = Input.GetAxisRaw("Vertical");
             movement = transform.right * moveHorizontal + transform.forward * moveVertical;
             float speed;
-            if (!running)
+            if (!crouching)
             {
-                speed = walkSpeed;
+                if (!running)
+                {
+                    speed = walkSpeed;
+                } else
+                {
+                    speed = runSpeed;
+                }
             } else
             {
-                speed = runSpeed;
+                speed = crouchSpeed;
             }
             characterController.Move(movement.normalized * speed * Time.deltaTime);
             Ray ray = new Ray (Camera.main.transform.position, Camera.main.transform.forward);
