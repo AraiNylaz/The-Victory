@@ -412,6 +412,90 @@ public class Controls : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Sound"",
+            ""id"": ""87bb78a9-bf87-4740-9964-9427b34efb9f"",
+            ""actions"": [
+                {
+                    ""name"": ""IncreaseSound"",
+                    ""type"": ""Button"",
+                    ""id"": ""626c4b59-f0e5-4939-9d06-a637ba291c89"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""LowerSound"",
+                    ""type"": ""Button"",
+                    ""id"": ""c5ee8c23-2f57-4631-af1e-56a0f470b5e9"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""IncreaseMusic"",
+                    ""type"": ""Button"",
+                    ""id"": ""3299069f-c534-4af4-a1a5-c8674827b63c"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""LowerMusic"",
+                    ""type"": ""Button"",
+                    ""id"": ""a36c5969-2ffc-4679-ad07-27988ef999de"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """"
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""2f19bfd5-7d8c-4720-8ab5-5d157fcf6066"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""IncreaseSound"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8b2e435e-15be-4062-8a61-53b4ddef4b79"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""LowerSound"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d0e0fbff-b8aa-450f-adf1-2615999093bb"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""IncreaseMusic"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0f2c57ed-9dfd-4465-bd88-8a150af7e8d1"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""LowerMusic"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -466,6 +550,12 @@ public class Controls : IInputActionCollection, IDisposable
         m_Player_Aim = m_Player.FindAction("Aim", throwIfNotFound: true);
         m_Player_Reload = m_Player.FindAction("Reload", throwIfNotFound: true);
         m_Player_RescueHostage = m_Player.FindAction("RescueHostage", throwIfNotFound: true);
+        // Sound
+        m_Sound = asset.FindActionMap("Sound", throwIfNotFound: true);
+        m_Sound_IncreaseSound = m_Sound.FindAction("IncreaseSound", throwIfNotFound: true);
+        m_Sound_LowerSound = m_Sound.FindAction("LowerSound", throwIfNotFound: true);
+        m_Sound_IncreaseMusic = m_Sound.FindAction("IncreaseMusic", throwIfNotFound: true);
+        m_Sound_LowerMusic = m_Sound.FindAction("LowerMusic", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -608,6 +698,63 @@ public class Controls : IInputActionCollection, IDisposable
         }
     }
     public PlayerActions @Player => new PlayerActions(this);
+
+    // Sound
+    private readonly InputActionMap m_Sound;
+    private ISoundActions m_SoundActionsCallbackInterface;
+    private readonly InputAction m_Sound_IncreaseSound;
+    private readonly InputAction m_Sound_LowerSound;
+    private readonly InputAction m_Sound_IncreaseMusic;
+    private readonly InputAction m_Sound_LowerMusic;
+    public struct SoundActions
+    {
+        private Controls m_Wrapper;
+        public SoundActions(Controls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @IncreaseSound => m_Wrapper.m_Sound_IncreaseSound;
+        public InputAction @LowerSound => m_Wrapper.m_Sound_LowerSound;
+        public InputAction @IncreaseMusic => m_Wrapper.m_Sound_IncreaseMusic;
+        public InputAction @LowerMusic => m_Wrapper.m_Sound_LowerMusic;
+        public InputActionMap Get() { return m_Wrapper.m_Sound; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(SoundActions set) { return set.Get(); }
+        public void SetCallbacks(ISoundActions instance)
+        {
+            if (m_Wrapper.m_SoundActionsCallbackInterface != null)
+            {
+                IncreaseSound.started -= m_Wrapper.m_SoundActionsCallbackInterface.OnIncreaseSound;
+                IncreaseSound.performed -= m_Wrapper.m_SoundActionsCallbackInterface.OnIncreaseSound;
+                IncreaseSound.canceled -= m_Wrapper.m_SoundActionsCallbackInterface.OnIncreaseSound;
+                LowerSound.started -= m_Wrapper.m_SoundActionsCallbackInterface.OnLowerSound;
+                LowerSound.performed -= m_Wrapper.m_SoundActionsCallbackInterface.OnLowerSound;
+                LowerSound.canceled -= m_Wrapper.m_SoundActionsCallbackInterface.OnLowerSound;
+                IncreaseMusic.started -= m_Wrapper.m_SoundActionsCallbackInterface.OnIncreaseMusic;
+                IncreaseMusic.performed -= m_Wrapper.m_SoundActionsCallbackInterface.OnIncreaseMusic;
+                IncreaseMusic.canceled -= m_Wrapper.m_SoundActionsCallbackInterface.OnIncreaseMusic;
+                LowerMusic.started -= m_Wrapper.m_SoundActionsCallbackInterface.OnLowerMusic;
+                LowerMusic.performed -= m_Wrapper.m_SoundActionsCallbackInterface.OnLowerMusic;
+                LowerMusic.canceled -= m_Wrapper.m_SoundActionsCallbackInterface.OnLowerMusic;
+            }
+            m_Wrapper.m_SoundActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                IncreaseSound.started += instance.OnIncreaseSound;
+                IncreaseSound.performed += instance.OnIncreaseSound;
+                IncreaseSound.canceled += instance.OnIncreaseSound;
+                LowerSound.started += instance.OnLowerSound;
+                LowerSound.performed += instance.OnLowerSound;
+                LowerSound.canceled += instance.OnLowerSound;
+                IncreaseMusic.started += instance.OnIncreaseMusic;
+                IncreaseMusic.performed += instance.OnIncreaseMusic;
+                IncreaseMusic.canceled += instance.OnIncreaseMusic;
+                LowerMusic.started += instance.OnLowerMusic;
+                LowerMusic.performed += instance.OnLowerMusic;
+                LowerMusic.canceled += instance.OnLowerMusic;
+            }
+        }
+    }
+    public SoundActions @Sound => new SoundActions(this);
     private int m_KeyboardMouseSchemeIndex = -1;
     public InputControlScheme KeyboardMouseScheme
     {
@@ -646,5 +793,12 @@ public class Controls : IInputActionCollection, IDisposable
         void OnAim(InputAction.CallbackContext context);
         void OnReload(InputAction.CallbackContext context);
         void OnRescueHostage(InputAction.CallbackContext context);
+    }
+    public interface ISoundActions
+    {
+        void OnIncreaseSound(InputAction.CallbackContext context);
+        void OnLowerSound(InputAction.CallbackContext context);
+        void OnIncreaseMusic(InputAction.CallbackContext context);
+        void OnLowerMusic(InputAction.CallbackContext context);
     }
 }
