@@ -6,8 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/GreenForest/Scences/Scene.unity
-    guid: 6e434770a7e9af947923dc9bbc63f752
+    path: Assets/Scenes/Main Menu.unity
+    guid: 72eb533d313ee8a47b0f93f34e7dc74f
+  - enabled: 1
+    path: Assets/Scenes/Forest.unity
+    guid: 46849389c07139846a62e5f88ccc766c
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: b9d108614dabfc644bb167a60cbad49b,
       type: 2}
