@@ -164,12 +164,12 @@ public class PlayerController : MonoBehaviour
 
     void run(bool state)
     {
-        if (!dead && !crouching) running = state;
+        if (!dead && !crouching && !GameController.instance.gameOver && !GameController.instance.won) running = state;
     }
 
     void jump()
     {
-        if (!dead && grounded)
+        if (!dead && grounded && !GameController.instance.gameOver && !GameController.instance.won)
         {
             if (!crouching)
             {
@@ -183,7 +183,7 @@ public class PlayerController : MonoBehaviour
 
     void crouch()
     {
-        if (!dead && grounded)
+        if (!dead && grounded && !GameController.instance.gameOver && !GameController.instance.won)
         {
             if (!crouching)
             {
@@ -201,7 +201,7 @@ public class PlayerController : MonoBehaviour
 
     void turn(Vector2 direction)
     {
-        if (!dead)
+        if (!dead && !GameController.instance.gameOver && !GameController.instance.won)
         {
             cameraMovement = new Vector2(direction.x * mouseSensitivity.x * Time.deltaTime, direction.y * mouseSensitivity.y * Time.deltaTime);
             cameraX -= cameraMovement.y;
