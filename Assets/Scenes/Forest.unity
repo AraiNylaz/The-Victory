@@ -5712,6 +5712,7 @@ MonoBehaviour:
   - {fileID: 1214511534}
   - {fileID: 1862397333}
   mainText: {fileID: 1559724531}
+  audioMixer: {fileID: 24100000, guid: 7af1658a85a890744836fb76a2efe6d9, type: 2}
   gameOver: 0
   won: 0
 --- !u!4 &1576838184
