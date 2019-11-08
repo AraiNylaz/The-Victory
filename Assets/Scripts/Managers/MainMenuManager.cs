@@ -12,6 +12,8 @@ public class MainMenuManager : MonoBehaviour
     [Header("Setup")]
     [SerializeField] private Canvas mainMenu = null;
     [SerializeField] private Canvas settingsMenu = null;
+    [SerializeField] private Canvas graphicsQualityMenu = null;
+    [SerializeField] private Canvas soundMenu = null;
     [SerializeField] private GameObject loadingScreen = null;
     [SerializeField] private Slider loadingSlider = null;
     [SerializeField] private Text loadingPercentage = null;
@@ -45,6 +47,8 @@ public class MainMenuManager : MonoBehaviour
         }
         mainMenu.enabled = true;
         settingsMenu.enabled = false;
+        graphicsQualityMenu.enabled = false;
+        soundMenu.enabled = false;
     }
 
     void Update()
@@ -79,7 +83,9 @@ public class MainMenuManager : MonoBehaviour
                     loadingPercentage.text = "100%";
                 }
                 mainMenu.enabled = false;
-                settingsMenu.enabled = true;
+                settingsMenu.enabled = false;
+                graphicsQualityMenu.enabled = false;
+                soundMenu.enabled = false;
                 yield return null;
             }
         }
