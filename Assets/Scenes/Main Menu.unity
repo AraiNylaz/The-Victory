@@ -1694,6 +1694,8 @@ MonoBehaviour:
   buttonClick: {fileID: 0}
   mainMenu: {fileID: 418897508}
   settingsMenu: {fileID: 908882500}
+  graphicsQualityMenu: {fileID: 1387179249}
+  soundMenu: {fileID: 1560863903}
   loadingScreen: {fileID: 703896239}
   loadingSlider: {fileID: 395910845}
   loadingPercentage: {fileID: 2118623346}
