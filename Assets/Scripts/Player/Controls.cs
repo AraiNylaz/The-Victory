@@ -6,10 +6,10 @@ using System.Collections.Generic;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Utilities;
 
-public class Controls : IInputActionCollection, IDisposable
+public class @Controls : IInputActionCollection, IDisposable
 {
     private InputActionAsset asset;
-    public Controls()
+    public @Controls()
     {
         asset = InputActionAsset.FromJson(@"{
     ""name"": ""Controls"",
@@ -616,8 +616,8 @@ public class Controls : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_RescueHostage;
     public struct PlayerActions
     {
-        private Controls m_Wrapper;
-        public PlayerActions(Controls wrapper) { m_Wrapper = wrapper; }
+        private @Controls m_Wrapper;
+        public PlayerActions(@Controls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_Player_Move;
         public InputAction @Run => m_Wrapper.m_Player_Run;
         public InputAction @Jump => m_Wrapper.m_Player_Jump;
@@ -636,64 +636,64 @@ public class Controls : IInputActionCollection, IDisposable
         {
             if (m_Wrapper.m_PlayerActionsCallbackInterface != null)
             {
-                Move.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMove;
-                Move.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMove;
-                Move.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMove;
-                Run.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRun;
-                Run.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRun;
-                Run.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRun;
-                Jump.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJump;
-                Jump.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJump;
-                Jump.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJump;
-                Crouch.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCrouch;
-                Crouch.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCrouch;
-                Crouch.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCrouch;
-                Turn.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnTurn;
-                Turn.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnTurn;
-                Turn.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnTurn;
-                Fire.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire;
-                Fire.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire;
-                Fire.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire;
-                Aim.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAim;
-                Aim.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAim;
-                Aim.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAim;
-                Reload.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnReload;
-                Reload.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnReload;
-                Reload.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnReload;
-                RescueHostage.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRescueHostage;
-                RescueHostage.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRescueHostage;
-                RescueHostage.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRescueHostage;
+                @Move.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMove;
+                @Move.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMove;
+                @Move.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMove;
+                @Run.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRun;
+                @Run.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRun;
+                @Run.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRun;
+                @Jump.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJump;
+                @Jump.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJump;
+                @Jump.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJump;
+                @Crouch.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCrouch;
+                @Crouch.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCrouch;
+                @Crouch.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCrouch;
+                @Turn.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnTurn;
+                @Turn.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnTurn;
+                @Turn.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnTurn;
+                @Fire.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire;
+                @Fire.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire;
+                @Fire.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire;
+                @Aim.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAim;
+                @Aim.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAim;
+                @Aim.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAim;
+                @Reload.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnReload;
+                @Reload.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnReload;
+                @Reload.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnReload;
+                @RescueHostage.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRescueHostage;
+                @RescueHostage.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRescueHostage;
+                @RescueHostage.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRescueHostage;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
             {
-                Move.started += instance.OnMove;
-                Move.performed += instance.OnMove;
-                Move.canceled += instance.OnMove;
-                Run.started += instance.OnRun;
-                Run.performed += instance.OnRun;
-                Run.canceled += instance.OnRun;
-                Jump.started += instance.OnJump;
-                Jump.performed += instance.OnJump;
-                Jump.canceled += instance.OnJump;
-                Crouch.started += instance.OnCrouch;
-                Crouch.performed += instance.OnCrouch;
-                Crouch.canceled += instance.OnCrouch;
-                Turn.started += instance.OnTurn;
-                Turn.performed += instance.OnTurn;
-                Turn.canceled += instance.OnTurn;
-                Fire.started += instance.OnFire;
-                Fire.performed += instance.OnFire;
-                Fire.canceled += instance.OnFire;
-                Aim.started += instance.OnAim;
-                Aim.performed += instance.OnAim;
-                Aim.canceled += instance.OnAim;
-                Reload.started += instance.OnReload;
-                Reload.performed += instance.OnReload;
-                Reload.canceled += instance.OnReload;
-                RescueHostage.started += instance.OnRescueHostage;
-                RescueHostage.performed += instance.OnRescueHostage;
-                RescueHostage.canceled += instance.OnRescueHostage;
+                @Move.started += instance.OnMove;
+                @Move.performed += instance.OnMove;
+                @Move.canceled += instance.OnMove;
+                @Run.started += instance.OnRun;
+                @Run.performed += instance.OnRun;
+                @Run.canceled += instance.OnRun;
+                @Jump.started += instance.OnJump;
+                @Jump.performed += instance.OnJump;
+                @Jump.canceled += instance.OnJump;
+                @Crouch.started += instance.OnCrouch;
+                @Crouch.performed += instance.OnCrouch;
+                @Crouch.canceled += instance.OnCrouch;
+                @Turn.started += instance.OnTurn;
+                @Turn.performed += instance.OnTurn;
+                @Turn.canceled += instance.OnTurn;
+                @Fire.started += instance.OnFire;
+                @Fire.performed += instance.OnFire;
+                @Fire.canceled += instance.OnFire;
+                @Aim.started += instance.OnAim;
+                @Aim.performed += instance.OnAim;
+                @Aim.canceled += instance.OnAim;
+                @Reload.started += instance.OnReload;
+                @Reload.performed += instance.OnReload;
+                @Reload.canceled += instance.OnReload;
+                @RescueHostage.started += instance.OnRescueHostage;
+                @RescueHostage.performed += instance.OnRescueHostage;
+                @RescueHostage.canceled += instance.OnRescueHostage;
             }
         }
     }
@@ -708,8 +708,8 @@ public class Controls : IInputActionCollection, IDisposable
     private readonly InputAction m_Sound_LowerMusic;
     public struct SoundActions
     {
-        private Controls m_Wrapper;
-        public SoundActions(Controls wrapper) { m_Wrapper = wrapper; }
+        private @Controls m_Wrapper;
+        public SoundActions(@Controls wrapper) { m_Wrapper = wrapper; }
         public InputAction @IncreaseSound => m_Wrapper.m_Sound_IncreaseSound;
         public InputAction @LowerSound => m_Wrapper.m_Sound_LowerSound;
         public InputAction @IncreaseMusic => m_Wrapper.m_Sound_IncreaseMusic;
@@ -723,34 +723,34 @@ public class Controls : IInputActionCollection, IDisposable
         {
             if (m_Wrapper.m_SoundActionsCallbackInterface != null)
             {
-                IncreaseSound.started -= m_Wrapper.m_SoundActionsCallbackInterface.OnIncreaseSound;
-                IncreaseSound.performed -= m_Wrapper.m_SoundActionsCallbackInterface.OnIncreaseSound;
-                IncreaseSound.canceled -= m_Wrapper.m_SoundActionsCallbackInterface.OnIncreaseSound;
-                LowerSound.started -= m_Wrapper.m_SoundActionsCallbackInterface.OnLowerSound;
-                LowerSound.performed -= m_Wrapper.m_SoundActionsCallbackInterface.OnLowerSound;
-                LowerSound.canceled -= m_Wrapper.m_SoundActionsCallbackInterface.OnLowerSound;
-                IncreaseMusic.started -= m_Wrapper.m_SoundActionsCallbackInterface.OnIncreaseMusic;
-                IncreaseMusic.performed -= m_Wrapper.m_SoundActionsCallbackInterface.OnIncreaseMusic;
-                IncreaseMusic.canceled -= m_Wrapper.m_SoundActionsCallbackInterface.OnIncreaseMusic;
-                LowerMusic.started -= m_Wrapper.m_SoundActionsCallbackInterface.OnLowerMusic;
-                LowerMusic.performed -= m_Wrapper.m_SoundActionsCallbackInterface.OnLowerMusic;
-                LowerMusic.canceled -= m_Wrapper.m_SoundActionsCallbackInterface.OnLowerMusic;
+                @IncreaseSound.started -= m_Wrapper.m_SoundActionsCallbackInterface.OnIncreaseSound;
+                @IncreaseSound.performed -= m_Wrapper.m_SoundActionsCallbackInterface.OnIncreaseSound;
+                @IncreaseSound.canceled -= m_Wrapper.m_SoundActionsCallbackInterface.OnIncreaseSound;
+                @LowerSound.started -= m_Wrapper.m_SoundActionsCallbackInterface.OnLowerSound;
+                @LowerSound.performed -= m_Wrapper.m_SoundActionsCallbackInterface.OnLowerSound;
+                @LowerSound.canceled -= m_Wrapper.m_SoundActionsCallbackInterface.OnLowerSound;
+                @IncreaseMusic.started -= m_Wrapper.m_SoundActionsCallbackInterface.OnIncreaseMusic;
+                @IncreaseMusic.performed -= m_Wrapper.m_SoundActionsCallbackInterface.OnIncreaseMusic;
+                @IncreaseMusic.canceled -= m_Wrapper.m_SoundActionsCallbackInterface.OnIncreaseMusic;
+                @LowerMusic.started -= m_Wrapper.m_SoundActionsCallbackInterface.OnLowerMusic;
+                @LowerMusic.performed -= m_Wrapper.m_SoundActionsCallbackInterface.OnLowerMusic;
+                @LowerMusic.canceled -= m_Wrapper.m_SoundActionsCallbackInterface.OnLowerMusic;
             }
             m_Wrapper.m_SoundActionsCallbackInterface = instance;
             if (instance != null)
             {
-                IncreaseSound.started += instance.OnIncreaseSound;
-                IncreaseSound.performed += instance.OnIncreaseSound;
-                IncreaseSound.canceled += instance.OnIncreaseSound;
-                LowerSound.started += instance.OnLowerSound;
-                LowerSound.performed += instance.OnLowerSound;
-                LowerSound.canceled += instance.OnLowerSound;
-                IncreaseMusic.started += instance.OnIncreaseMusic;
-                IncreaseMusic.performed += instance.OnIncreaseMusic;
-                IncreaseMusic.canceled += instance.OnIncreaseMusic;
-                LowerMusic.started += instance.OnLowerMusic;
-                LowerMusic.performed += instance.OnLowerMusic;
-                LowerMusic.canceled += instance.OnLowerMusic;
+                @IncreaseSound.started += instance.OnIncreaseSound;
+                @IncreaseSound.performed += instance.OnIncreaseSound;
+                @IncreaseSound.canceled += instance.OnIncreaseSound;
+                @LowerSound.started += instance.OnLowerSound;
+                @LowerSound.performed += instance.OnLowerSound;
+                @LowerSound.canceled += instance.OnLowerSound;
+                @IncreaseMusic.started += instance.OnIncreaseMusic;
+                @IncreaseMusic.performed += instance.OnIncreaseMusic;
+                @IncreaseMusic.canceled += instance.OnIncreaseMusic;
+                @LowerMusic.started += instance.OnLowerMusic;
+                @LowerMusic.performed += instance.OnLowerMusic;
+                @LowerMusic.canceled += instance.OnLowerMusic;
             }
         }
     }
