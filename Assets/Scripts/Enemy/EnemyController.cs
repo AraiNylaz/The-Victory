@@ -43,9 +43,9 @@ public class EnemyController : MonoBehaviour
         if (!enemyHealth.dead && !GameController.instance.gameOver && !GameController.instance.won)
         {
             getPlayer(false);
+            navMeshAgent.enabled = true;
             if (player)
             {
-                navMeshAgent.enabled = true;
                 if (!player.dead)
                 {
                     if (!chasing)
@@ -159,7 +159,7 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-    IEnumerator dropBody() //
+    IEnumerator dropBody()
     {
         for (int i = 0; i < 18; i ++)
         {
