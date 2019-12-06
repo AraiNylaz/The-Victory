@@ -3,13 +3,11 @@ using UnityEngine.UI;
 
 public class Objective : MonoBehaviour
 {
-    [Header("Settings")]
-    [SerializeField] private string type = "Clear";
-
-    [Header("UI")]
+    [SerializeField] private Types type = Types.Clear;
     [SerializeField] private Text count = null;
     [SerializeField] private Image checkmark = null;
 
+    [SerializeField] private enum Types {Clear, Rescue};
     [HideInInspector] public bool completed = false;
     private EnemyController[] enemies;
     private int hostages = 0;
@@ -18,10 +16,10 @@ public class Objective : MonoBehaviour
     void Awake()
     {
         completed = false;
-        if (type == "Clear")
+        if (type == Types.Clear)
         {
             enemies = FindObjectsOfType<EnemyController>();
-        } else if (type == "Rescue")
+        } else if (type == Types.Rescue)
         {
             foreach (Hostage hostage in FindObjectsOfType<Hostage>()) ++hostages;
         }
@@ -29,7 +27,7 @@ public class Objective : MonoBehaviour
 
     void Update()
     {
-        if (type == "Clear")
+        if (type == Types.Clear)
         {
             int amount = 0;
             for (int i = 0; i < enemies.Length; i++)
@@ -37,7 +35,7 @@ public class Objective : MonoBehaviour
                 EnemyHealth enemyHealth = enemies[i].GetComponent<EnemyHealth>();
                 if (enemyHealth && enemyHealth.dead) ++amount;
             }
-        } else if (type == "Rescue")
+        } else if (type == Types.Rescue)
         {
             int amount = 0;
             foreach (Hostage hostage in FindObjectsOfType<Hostage>())
@@ -53,7 +51,7 @@ public class Objective : MonoBehaviour
     {
         if (!completed)
         {
-            if (type == "Clear")
+            if (type == Types.Clear)
             {
                 int amount = 0;
                 for (int i = 0; i < enemies.Length; i++)
@@ -66,7 +64,7 @@ public class Objective : MonoBehaviour
                     completed = true;
                     checkmark.enabled = true;
                 }
-            } else if (type == "Rescue")
+            } else if (type == Types.Rescue)
             {
                 if (hostagesRescued >= hostages)
                 {
