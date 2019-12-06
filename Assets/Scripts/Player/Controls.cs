@@ -414,8 +414,95 @@ public class @Controls : IInputActionCollection, IDisposable
             ]
         },
         {
-            ""name"": ""Sound"",
+            ""name"": ""Gameplay"",
             ""id"": ""87bb78a9-bf87-4740-9964-9427b34efb9f"",
+            ""actions"": [
+                {
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""9728f828-dc52-4ad7-a5d2-187a8e41cde2"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""CloseMenu"",
+                    ""type"": ""Button"",
+                    ""id"": ""eb29556a-fcc9-4f14-bac8-5f66816ef96a"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Resume"",
+                    ""type"": ""Button"",
+                    ""id"": ""5b7d0150-2111-4e0c-adc7-46d972c7e379"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """"
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""85102f2d-dbe8-4dc1-9a12-182d5cb6b812"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard & Mouse"",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""71f871bd-fa0c-418a-ae66-8831825ec4d3"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0a299080-f18e-4916-93a8-f74a06be5661"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard & Mouse"",
+                    ""action"": ""CloseMenu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ec928f9a-51f1-4286-b5b5-5ef7a8ad5822"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""CloseMenu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""20c2ae24-a14e-4e8c-a1da-7dea37e62952"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Resume"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""Sound"",
+            ""id"": ""ec0767f6-fd4f-4e48-9c13-04d62bdd2ab4"",
             ""actions"": [
                 {
                     ""name"": ""IncreaseSound"",
@@ -550,6 +637,11 @@ public class @Controls : IInputActionCollection, IDisposable
         m_Player_Aim = m_Player.FindAction("Aim", throwIfNotFound: true);
         m_Player_Reload = m_Player.FindAction("Reload", throwIfNotFound: true);
         m_Player_RescueHostage = m_Player.FindAction("RescueHostage", throwIfNotFound: true);
+        // Gameplay
+        m_Gameplay = asset.FindActionMap("Gameplay", throwIfNotFound: true);
+        m_Gameplay_Pause = m_Gameplay.FindAction("Pause", throwIfNotFound: true);
+        m_Gameplay_CloseMenu = m_Gameplay.FindAction("CloseMenu", throwIfNotFound: true);
+        m_Gameplay_Resume = m_Gameplay.FindAction("Resume", throwIfNotFound: true);
         // Sound
         m_Sound = asset.FindActionMap("Sound", throwIfNotFound: true);
         m_Sound_IncreaseSound = m_Sound.FindAction("IncreaseSound", throwIfNotFound: true);
@@ -699,6 +791,55 @@ public class @Controls : IInputActionCollection, IDisposable
     }
     public PlayerActions @Player => new PlayerActions(this);
 
+    // Gameplay
+    private readonly InputActionMap m_Gameplay;
+    private IGameplayActions m_GameplayActionsCallbackInterface;
+    private readonly InputAction m_Gameplay_Pause;
+    private readonly InputAction m_Gameplay_CloseMenu;
+    private readonly InputAction m_Gameplay_Resume;
+    public struct GameplayActions
+    {
+        private @Controls m_Wrapper;
+        public GameplayActions(@Controls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Pause => m_Wrapper.m_Gameplay_Pause;
+        public InputAction @CloseMenu => m_Wrapper.m_Gameplay_CloseMenu;
+        public InputAction @Resume => m_Wrapper.m_Gameplay_Resume;
+        public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(GameplayActions set) { return set.Get(); }
+        public void SetCallbacks(IGameplayActions instance)
+        {
+            if (m_Wrapper.m_GameplayActionsCallbackInterface != null)
+            {
+                @Pause.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnPause;
+                @Pause.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnPause;
+                @Pause.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnPause;
+                @CloseMenu.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnCloseMenu;
+                @CloseMenu.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnCloseMenu;
+                @CloseMenu.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnCloseMenu;
+                @Resume.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnResume;
+                @Resume.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnResume;
+                @Resume.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnResume;
+            }
+            m_Wrapper.m_GameplayActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Pause.started += instance.OnPause;
+                @Pause.performed += instance.OnPause;
+                @Pause.canceled += instance.OnPause;
+                @CloseMenu.started += instance.OnCloseMenu;
+                @CloseMenu.performed += instance.OnCloseMenu;
+                @CloseMenu.canceled += instance.OnCloseMenu;
+                @Resume.started += instance.OnResume;
+                @Resume.performed += instance.OnResume;
+                @Resume.canceled += instance.OnResume;
+            }
+        }
+    }
+    public GameplayActions @Gameplay => new GameplayActions(this);
+
     // Sound
     private readonly InputActionMap m_Sound;
     private ISoundActions m_SoundActionsCallbackInterface;
@@ -793,6 +934,12 @@ public class @Controls : IInputActionCollection, IDisposable
         void OnAim(InputAction.CallbackContext context);
         void OnReload(InputAction.CallbackContext context);
         void OnRescueHostage(InputAction.CallbackContext context);
+    }
+    public interface IGameplayActions
+    {
+        void OnPause(InputAction.CallbackContext context);
+        void OnCloseMenu(InputAction.CallbackContext context);
+        void OnResume(InputAction.CallbackContext context);
     }
     public interface ISoundActions
     {
