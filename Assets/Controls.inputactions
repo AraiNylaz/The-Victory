@@ -401,8 +401,95 @@
             ]
         },
         {
-            "name": "Sound",
+            "name": "Gameplay",
             "id": "87bb78a9-bf87-4740-9964-9427b34efb9f",
+            "actions": [
+                {
+                    "name": "Pause",
+                    "type": "Button",
+                    "id": "9728f828-dc52-4ad7-a5d2-187a8e41cde2",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "CloseMenu",
+                    "type": "Button",
+                    "id": "eb29556a-fcc9-4f14-bac8-5f66816ef96a",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Resume",
+                    "type": "Button",
+                    "id": "5b7d0150-2111-4e0c-adc7-46d972c7e379",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "85102f2d-dbe8-4dc1-9a12-182d5cb6b812",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard & Mouse",
+                    "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "71f871bd-fa0c-418a-ae66-8831825ec4d3",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0a299080-f18e-4916-93a8-f74a06be5661",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard & Mouse",
+                    "action": "CloseMenu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ec928f9a-51f1-4286-b5b5-5ef7a8ad5822",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "CloseMenu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "20c2ae24-a14e-4e8c-a1da-7dea37e62952",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Resume",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Sound",
+            "id": "ec0767f6-fd4f-4e48-9c13-04d62bdd2ab4",
             "actions": [
                 {
                     "name": "IncreaseSound",
