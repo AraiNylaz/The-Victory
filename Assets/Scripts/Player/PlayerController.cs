@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
     [Header("Settings")]
-    [SerializeField] private long maxHealth = 100;
+    public long maxHealth = 100;
     [SerializeField] private float walkSpeed = 5;
     [SerializeField] private float runSpeed = 7; 
     [SerializeField] private float crouchSpeed = 3;
@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour
     private new CapsuleCollider collider;
     private AudioSource audioSource;
     private Controls input;
-    private long health = 100;
+    [HideInInspector] public long health = 100;
     [HideInInspector] public bool dead = false;
     private bool crouching = false;
     private bool running = false;
