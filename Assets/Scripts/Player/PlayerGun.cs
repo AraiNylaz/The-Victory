@@ -96,55 +96,61 @@ public class PlayerGun : MonoBehaviour
     #region Input Functions
     void shoot(bool state)
     {
-        if (state)
+        if (!GameController.instance.gameOver && !GameController.instance.won && !GameController.instance.paused)
         {
-            if (ammo > 0 && Time.time >= nextShot)
+            if (state)
             {
-                if (!auto)
+                if (ammo > 0 && Time.time >= nextShot)
                 {
-                    if (!holding)
+                    if (!auto)
                     {
-                        StartCoroutine(fire(damage, RPM, spread, shots, bulletsFired));
+                        if (!holding)
+                        {
+                            StartCoroutine(fire(damage, RPM, spread, shots, bulletsFired));
+                            holding = true;
+                        }
+                    } else
+                    {
                         holding = true;
+                        StartCoroutine(autofire());
                     }
-                } else
-                {
-                    holding = true;
-                    StartCoroutine(autofire());
                 }
+            } else
+            {
+                holding = false;
+                StopCoroutine(autofire());
             }
-        } else
-        {
-            holding = false;
-            StopCoroutine(autofire());
         }
     }
 
     void aim(bool state)
     {
-        if (!reloading)
+        if (!GameController.instance.gameOver && !GameController.instance.won && !GameController.instance.paused)
         {
-            if (state && !aiming)
+            if (!reloading)
             {
-                aiming = true;
-                transform.Translate(-aimPosition);
-                Camera.main.fieldOfView -= aimFOVIncrement;
-                if (weaponCamera) weaponCamera.fieldOfView = Camera.main.fieldOfView;
-                if (crosshair) crosshair.enabled = false;
-            } else if (!state && aiming)
-            {
-                aiming = false;
-                transform.Translate(aimPosition);
-                Camera.main.fieldOfView += aimFOVIncrement;
-                if (weaponCamera) weaponCamera.fieldOfView = Camera.main.fieldOfView;
-                if (crosshair) crosshair.enabled = true;
+                if (state && !aiming)
+                {
+                    aiming = true;
+                    transform.Translate(-aimPosition);
+                    Camera.main.fieldOfView -= aimFOVIncrement;
+                    if (weaponCamera) weaponCamera.fieldOfView = Camera.main.fieldOfView;
+                    if (crosshair) crosshair.enabled = false;
+                } else if (!state && aiming)
+                {
+                    aiming = false;
+                    transform.Translate(aimPosition);
+                    Camera.main.fieldOfView += aimFOVIncrement;
+                    if (weaponCamera) weaponCamera.fieldOfView = Camera.main.fieldOfView;
+                    if (crosshair) crosshair.enabled = true;
+                }
             }
         }
     }
 
     void reload()
     {
-        if (ammo < maxAmmo && !reloading)
+        if (ammo < maxAmmo && !reloading && !GameController.instance.gameOver && !GameController.instance.won && !GameController.instance.paused)
         {
             aim(false);
             reloading = true;
@@ -157,7 +163,7 @@ public class PlayerGun : MonoBehaviour
     #region Main Functions
     IEnumerator fire(long damage, float RPM, float spread, int shots, int bulletsFired)
     {
-        if (!firing && !reloading && !GameController.instance.gameOver && !GameController.instance.won)
+        if (!firing && !reloading && !GameController.instance.gameOver && !GameController.instance.won && !GameController.instance.paused)
         {
             int c = 0;
             int shotsToFire = bulletsFired;
