@@ -11,6 +11,8 @@ public class MainMenuManager : MonoBehaviour
 
     [Header("Setup")]
     [SerializeField] private Canvas mainMenu = null;
+    [SerializeField] private Canvas episodesMenu = null;
+    [SerializeField] private Canvas multiplayerMenu = null;
     [SerializeField] private Canvas settingsMenu = null;
     [SerializeField] private Canvas graphicsQualityMenu = null;
     [SerializeField] private Canvas soundMenu = null;
@@ -46,6 +48,8 @@ public class MainMenuManager : MonoBehaviour
             audioMixer.SetFloat("MusicVolume", Mathf.Log10(PlayerPrefs.GetFloat("MusicVolume")) * 20);
         }
         mainMenu.enabled = true;
+        episodesMenu.enabled = false;
+        multiplayerMenu.enabled = false;
         settingsMenu.enabled = false;
         graphicsQualityMenu.enabled = false;
         soundMenu.enabled = false;
@@ -83,6 +87,8 @@ public class MainMenuManager : MonoBehaviour
                     loadingPercentage.text = "100%";
                 }
                 mainMenu.enabled = false;
+                episodesMenu.enabled = false;
+                multiplayerMenu.enabled = false;
                 settingsMenu.enabled = false;
                 graphicsQualityMenu.enabled = false;
                 soundMenu.enabled = false;
