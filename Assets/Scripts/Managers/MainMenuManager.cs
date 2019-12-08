@@ -110,7 +110,7 @@ public class MainMenuManager : MonoBehaviour
                 audioSource.Play();
             }
         }
-        StartCoroutine(loadScene("Forest"));
+        StartCoroutine(loadScene("Cutscene"));
     }
 
     public void openCanvasFromMainMenu(Canvas canvas)
