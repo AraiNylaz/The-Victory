@@ -234,7 +234,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   heal: 15
-  sound: {fileID: 0}
+  sound: {fileID: 2341294223670709708, guid: efdba17a67737e646922449ed1689772, type: 3}
 --- !u!135 &4629010703738962526
 SphereCollider:
   m_ObjectHideFlags: 0
