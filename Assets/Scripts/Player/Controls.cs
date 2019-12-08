@@ -440,6 +440,14 @@ public class @Controls : IInputActionCollection, IDisposable
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""SkipCutscene"",
+                    ""type"": ""Button"",
+                    ""id"": ""421c28b5-7968-4623-9ae4-40020adff8eb"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -495,6 +503,28 @@ public class @Controls : IInputActionCollection, IDisposable
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
                     ""action"": ""Resume"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d6ed5d00-49f7-49c8-8eb7-19f21498b821"",
+                    ""path"": ""<Keyboard>/x"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard & Mouse"",
+                    ""action"": ""SkipCutscene"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3c624b01-5dce-438b-bc7d-864eaa3af317"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""SkipCutscene"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -642,6 +672,7 @@ public class @Controls : IInputActionCollection, IDisposable
         m_Gameplay_Pause = m_Gameplay.FindAction("Pause", throwIfNotFound: true);
         m_Gameplay_CloseMenu = m_Gameplay.FindAction("CloseMenu", throwIfNotFound: true);
         m_Gameplay_Resume = m_Gameplay.FindAction("Resume", throwIfNotFound: true);
+        m_Gameplay_SkipCutscene = m_Gameplay.FindAction("SkipCutscene", throwIfNotFound: true);
         // Sound
         m_Sound = asset.FindActionMap("Sound", throwIfNotFound: true);
         m_Sound_IncreaseSound = m_Sound.FindAction("IncreaseSound", throwIfNotFound: true);
@@ -797,6 +828,7 @@ public class @Controls : IInputActionCollection, IDisposable
     private readonly InputAction m_Gameplay_Pause;
     private readonly InputAction m_Gameplay_CloseMenu;
     private readonly InputAction m_Gameplay_Resume;
+    private readonly InputAction m_Gameplay_SkipCutscene;
     public struct GameplayActions
     {
         private @Controls m_Wrapper;
@@ -804,6 +836,7 @@ public class @Controls : IInputActionCollection, IDisposable
         public InputAction @Pause => m_Wrapper.m_Gameplay_Pause;
         public InputAction @CloseMenu => m_Wrapper.m_Gameplay_CloseMenu;
         public InputAction @Resume => m_Wrapper.m_Gameplay_Resume;
+        public InputAction @SkipCutscene => m_Wrapper.m_Gameplay_SkipCutscene;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -822,6 +855,9 @@ public class @Controls : IInputActionCollection, IDisposable
                 @Resume.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnResume;
                 @Resume.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnResume;
                 @Resume.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnResume;
+                @SkipCutscene.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnSkipCutscene;
+                @SkipCutscene.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnSkipCutscene;
+                @SkipCutscene.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnSkipCutscene;
             }
             m_Wrapper.m_GameplayActionsCallbackInterface = instance;
             if (instance != null)
@@ -835,6 +871,9 @@ public class @Controls : IInputActionCollection, IDisposable
                 @Resume.started += instance.OnResume;
                 @Resume.performed += instance.OnResume;
                 @Resume.canceled += instance.OnResume;
+                @SkipCutscene.started += instance.OnSkipCutscene;
+                @SkipCutscene.performed += instance.OnSkipCutscene;
+                @SkipCutscene.canceled += instance.OnSkipCutscene;
             }
         }
     }
@@ -940,6 +979,7 @@ public class @Controls : IInputActionCollection, IDisposable
         void OnPause(InputAction.CallbackContext context);
         void OnCloseMenu(InputAction.CallbackContext context);
         void OnResume(InputAction.CallbackContext context);
+        void OnSkipCutscene(InputAction.CallbackContext context);
     }
     public interface ISoundActions
     {
