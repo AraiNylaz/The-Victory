@@ -85,6 +85,7 @@ public class GameController : MonoBehaviour
         input.Enable();
         input.Gameplay.Pause.performed += context => pause();
         input.Gameplay.Resume.performed += context => resume(false);
+        input.Gameplay.CloseMenu.performed += context => closeMenu();
     }
 
     void OnDisable()
@@ -92,6 +93,7 @@ public class GameController : MonoBehaviour
         input.Disable();
         input.Gameplay.Pause.performed -= context => pause();
         input.Gameplay.Resume.performed -= context => resume(false);
+        input.Gameplay.CloseMenu.performed -= context => closeMenu();
     }
 
     void Update()
@@ -154,26 +156,54 @@ public class GameController : MonoBehaviour
     #region Input Functions
     void pause()
     {
-        if (!paused)
+        if (!settingsMenu.enabled && !graphicsQualityMenu.enabled && !soundMenu.enabled)
         {
-            paused = true;
-            Cursor.lockState = CursorLockMode.None;
-            Time.timeScale = 0;
-            AudioListener.pause = true;
-            gamePausedMenu.enabled = true;
-        } else
+            if (!paused)
+            {
+                paused = true;
+                Cursor.lockState = CursorLockMode.None;
+                Time.timeScale = 0;
+                AudioListener.pause = true;
+                gamePausedMenu.enabled = true;
+            } else
+            {
+                paused = false;
+                Cursor.lockState = CursorLockMode.Locked;
+                Time.timeScale = 1;
+                AudioListener.pause = false;
+                gamePausedMenu.enabled = false;
+            }
+        }
+    }
+
+    void closeMenu()
+    {
+        if (settingsMenu.enabled)
         {
-            paused = false;
-            Cursor.lockState = CursorLockMode.Locked;
-            Time.timeScale = 1;
-            AudioListener.pause = false;
-            gamePausedMenu.enabled = false;
+            settingsMenu.enabled = false;
+            if (clickSource == ClickSources.GamePaused)
+            {
+                gamePausedMenu.enabled = true;
+            } else if (clickSource == ClickSources.GameOver)
+            {
+                gameOverMenu.enabled = true;
+            } else if (clickSource == ClickSources.LevelCompleted)
+            {
+                levelCompletedMenu.enabled = true;
+            }
+        } else if (graphicsQualityMenu.enabled)
+        {
+            graphicsQualityMenu.enabled = false;
+            settingsMenu.enabled = true;
+        } else if (soundMenu.enabled)
+        {
+            soundMenu.enabled = false;
+            settingsMenu.enabled = true;
         }
     }
     #endregion
 
     #region Menu Functions
-
     public void resume(bool wasClicked)
     {
         if (audioSource && wasClicked)
