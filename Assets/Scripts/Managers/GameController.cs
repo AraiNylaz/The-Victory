@@ -19,12 +19,14 @@ public class GameController : MonoBehaviour
     [SerializeField] private Canvas settingsMenu = null;
     [SerializeField] private Canvas graphicsQualityMenu = null;
     [SerializeField] private Canvas soundMenu = null;
+    [SerializeField] private Canvas mouseMenu = null;
     [SerializeField] private GameObject loadingScreen = null; 
     [SerializeField] private Slider loadingSlider = null;
     [SerializeField] private Text loadingPercentage = null;
 
     [Header("Sound Effects")]
-    [SerializeField] private AudioClip buttonClick = null;
+    [SerializeField] private AudioClip loseMusic = null;
+    [SerializeField] private AudioClip winMusic = null;
 
     [Header("Setup")]
     [SerializeField] private AudioMixer audioMixer = null;
@@ -78,6 +80,7 @@ public class GameController : MonoBehaviour
         settingsMenu.enabled = false;
         graphicsQualityMenu.enabled = false;
         soundMenu.enabled = false;
+        mouseMenu.enabled = false;
     }
 
     void OnEnable()
@@ -108,9 +111,31 @@ public class GameController : MonoBehaviour
         if (gameOver && !won)
         {
             if (!loading && !settingsMenu.enabled && !graphicsQualityMenu.enabled && !soundMenu.enabled) gameOverMenu.enabled = true;
+            if (loseMusic)
+            {
+                AudioSource music = Camera.main.GetComponent<AudioSource>();
+                if (music && music.clip != loseMusic)
+                {
+                    music.clip = loseMusic;
+                    music.Stop();
+                    music.Play();
+                }
+            }
+            Cursor.lockState = CursorLockMode.None;
         } else if (!gameOver && won)
         {
             if (!loading && !settingsMenu.enabled && !graphicsQualityMenu.enabled && !soundMenu.enabled) levelCompletedMenu.enabled = true;
+            if (winMusic)
+            {
+                AudioSource music = Camera.main.GetComponent<AudioSource>();
+                if (music && music.clip != winMusic)
+                {
+                    music.clip = winMusic;
+                    music.Stop();
+                    music.Play();
+                }
+            }
+            Cursor.lockState = CursorLockMode.None;
         }
         if (!loading)
         {
@@ -148,6 +173,7 @@ public class GameController : MonoBehaviour
                 settingsMenu.enabled = false;
                 graphicsQualityMenu.enabled = false;
                 soundMenu.enabled = false;
+                mouseMenu.enabled = false;
                 yield return null;
             }
         }
@@ -156,7 +182,7 @@ public class GameController : MonoBehaviour
     #region Input Functions
     void pause()
     {
-        if (!settingsMenu.enabled && !graphicsQualityMenu.enabled && !soundMenu.enabled)
+        if (!gameOver && !won && !gameOverMenu.enabled && !levelCompletedMenu.enabled)
         {
             if (!paused)
             {
@@ -167,11 +193,14 @@ public class GameController : MonoBehaviour
                 gamePausedMenu.enabled = true;
             } else
             {
-                paused = false;
-                Cursor.lockState = CursorLockMode.Locked;
-                Time.timeScale = 1;
-                AudioListener.pause = false;
-                gamePausedMenu.enabled = false;
+                if (!settingsMenu.enabled && !graphicsQualityMenu.enabled && !soundMenu.enabled && !mouseMenu.enabled)
+                {
+                    paused = false;
+                    Cursor.lockState = CursorLockMode.Locked;
+                    Time.timeScale = 1;
+                    AudioListener.pause = false;
+                    gamePausedMenu.enabled = false;
+                }
             }
         }
     }
@@ -199,6 +228,10 @@ public class GameController : MonoBehaviour
         {
             soundMenu.enabled = false;
             settingsMenu.enabled = true;
+        } else if (mouseMenu.enabled)
+        {
+            mouseMenu.enabled = false;
+            settingsMenu.enabled = true;
         }
     }
     #endregion
@@ -206,16 +239,7 @@ public class GameController : MonoBehaviour
     #region Menu Functions
     public void resume(bool wasClicked)
     {
-        if (audioSource && wasClicked)
-        {
-            if (buttonClick)
-            {
-                audioSource.PlayOneShot(buttonClick);
-            } else
-            {
-                audioSource.Play();
-            }
-        }
+        if (audioSource) audioSource.PlayOneShot(audioSource.clip);
         paused = false;
         Cursor.lockState = CursorLockMode.Locked;
         Time.timeScale = 1;
@@ -225,46 +249,19 @@ public class GameController : MonoBehaviour
 
     public void restart()
     {
-        if (audioSource)
-        {
-            if (buttonClick)
-            {
-                audioSource.PlayOneShot(buttonClick);
-            } else
-            {
-                audioSource.Play();
-            }
-        }
+        if (audioSource) audioSource.PlayOneShot(audioSource.clip);
         StartCoroutine(loadScene(SceneManager.GetActiveScene().name));
     }
 
     public void exitToMainMenu()
     {
-        if (audioSource)
-        {
-            if (buttonClick)
-            {
-                audioSource.PlayOneShot(buttonClick);
-            } else
-            {
-                audioSource.Play();
-            }
-        }
+        if (audioSource) audioSource.PlayOneShot(audioSource.clip);
         StartCoroutine(loadScene("Main Menu"));
     }
 
     public void exitGame()
     {
-        if (audioSource)
-        {
-            if (buttonClick)
-            {
-                audioSource.PlayOneShot(buttonClick);
-            } else
-            {
-                audioSource.Play();
-            }
-        }
+        if (audioSource) audioSource.PlayOneShot(audioSource.clip);
         Application.Quit();
         #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
