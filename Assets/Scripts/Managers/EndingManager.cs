@@ -16,12 +16,14 @@ public class EndingManager : MonoBehaviour
     [SerializeField] private Canvas missionCompletedMenu = null;
     [SerializeField] private AudioMixer audioMixer = null;
 
+    private AudioSource audioSource;
     private Controls input;
     private int currentDialog = 0;
     private bool loading = false;
 
     void Awake()
     {
+        audioSource = GetComponent<AudioSource>();
         input = new Controls();
         loading = false;
         Time.timeScale = 1;
@@ -59,11 +61,13 @@ public class EndingManager : MonoBehaviour
 
     IEnumerator cutscene()
     {
-        for (int i = 0; i < 500; i++)
+        for (int i = 0; i < 160; i++)
         {
             yield return new WaitForEndOfFrame();
-            Camera.main.transform.Rotate(0, 5 * Time.deltaTime, 0);
+            Camera.main.transform.Rotate(0, 0.5f, 0);
         }
+        yield return new WaitForSeconds(20);
+        missionCompletedMenu.enabled = true;
     }
 
     IEnumerator updateDialog()
@@ -102,8 +106,15 @@ public class EndingManager : MonoBehaviour
                     loadingSlider.value = 1;
                     loadingPercentage.text = "100%";
                 }
+                missionCompletedMenu.enabled = false;
                 yield return null;
             }
         }
+    }
+
+    public void exitToMainMenu()
+    {
+        if (audioSource) audioSource.PlayOneShot(audioSource.clip);
+        StartCoroutine(loadScene("Main Menu"));
     }
 }
