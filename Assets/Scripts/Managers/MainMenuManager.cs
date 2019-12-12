@@ -6,9 +6,6 @@ using UnityEngine.UI;
 
 public class MainMenuManager : MonoBehaviour
 {
-    [Header("Sound Effects")]
-    [SerializeField] private AudioClip buttonClick = null;
-
     [Header("Setup")]
     [SerializeField] private Canvas mainMenu = null;
     [SerializeField] private Canvas episodesMenu = null;
@@ -16,6 +13,7 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] private Canvas settingsMenu = null;
     [SerializeField] private Canvas graphicsQualityMenu = null;
     [SerializeField] private Canvas soundMenu = null;
+    [SerializeField] private Canvas mouseMenu = null;
     [SerializeField] private GameObject loadingScreen = null;
     [SerializeField] private Slider loadingSlider = null;
     [SerializeField] private Text loadingPercentage = null;
@@ -53,6 +51,7 @@ public class MainMenuManager : MonoBehaviour
         settingsMenu.enabled = false;
         graphicsQualityMenu.enabled = false;
         soundMenu.enabled = false;
+        mouseMenu.enabled = false;
     }
 
     void Update()
@@ -92,6 +91,7 @@ public class MainMenuManager : MonoBehaviour
                 settingsMenu.enabled = false;
                 graphicsQualityMenu.enabled = false;
                 soundMenu.enabled = false;
+                mouseMenu.enabled = false;
                 yield return null;
             }
         }
@@ -100,31 +100,13 @@ public class MainMenuManager : MonoBehaviour
     #region Menu Functions
     public void startGame()
     {
-        if (audioSource)
-        {
-            if (buttonClick)
-            {
-                audioSource.PlayOneShot(buttonClick);
-            } else
-            {
-                audioSource.Play();
-            }
-        }
+        if (audioSource) audioSource.PlayOneShot(audioSource.clip);
         StartCoroutine(loadScene("Cutscene"));
     }
 
     public void openCanvasFromMainMenu(Canvas canvas)
     {
-        if (audioSource)
-        {
-            if (buttonClick)
-            {
-                audioSource.PlayOneShot(buttonClick);
-            } else
-            {
-                audioSource.Play();
-            }
-        }
+        if (audioSource) audioSource.PlayOneShot(audioSource.clip);
         if (!canvas.enabled)
         {
             canvas.enabled = true;
@@ -138,16 +120,7 @@ public class MainMenuManager : MonoBehaviour
 
     public void openCanvasFromSettings(Canvas canvas)
     {
-        if (audioSource)
-        {
-            if (buttonClick)
-            {
-                audioSource.PlayOneShot(buttonClick);
-            } else
-            {
-                audioSource.Play();
-            }
-        }
+        if (audioSource) audioSource.PlayOneShot(audioSource.clip);
         if (!canvas.enabled)
         {
             canvas.enabled = true;
@@ -161,16 +134,7 @@ public class MainMenuManager : MonoBehaviour
 
     public void quitGame()
     {
-        if (audioSource)
-        {
-            if (buttonClick)
-            {
-                audioSource.PlayOneShot(buttonClick);
-            } else
-            {
-                audioSource.Play();
-            }
-        }
+        if (audioSource) audioSource.PlayOneShot(audioSource.clip);
         Application.Quit();
         #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
