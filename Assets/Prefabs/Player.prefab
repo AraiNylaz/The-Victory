@@ -209,6 +209,7 @@ MonoBehaviour:
   bulletHole: {fileID: 8617782660188817875, guid: 4d89a8ba607aec644a2e1d2d235c1771,
     type: 3}
   weaponCamera: {fileID: 4824271505970155956}
+  playerController: {fileID: 8482690272322726567}
 --- !u!1 &4824271505713490883
 GameObject:
   m_ObjectHideFlags: 0
@@ -735,17 +736,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  crouchSpeed: 3
   walkSpeed: 6
   runSpeed: 8
+  crouchSpeed: 3
   jumpHeight: 1.5
   crouchHeight: 1.3
-  mouseSensitivity: {x: 5, y: 5}
   groundLayer:
     serializedVersion: 2
     m_Bits: 513
   damageOverlay: {fileID: 0}
   crosshair: {fileID: 0}
+  healthBar: {fileID: 0}
   healthText: {fileID: 0}
   rescueText: {fileID: 0}
   warnText: {fileID: 0}
@@ -764,7 +765,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: d7b0c771e2c72aa40a4b4b620df5d8f4, type: 3}
   weapons:
   - {fileID: 4824271505098771001}
+  health: 100
   dead: 0
+  aiming: 0
 --- !u!114 &8482690272322726566
 MonoBehaviour:
   m_ObjectHideFlags: 0
