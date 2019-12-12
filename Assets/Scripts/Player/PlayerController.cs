@@ -10,12 +10,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float crouchSpeed = 3;
     [SerializeField] private float jumpHeight = 1.5f;
     [SerializeField] private float crouchHeight = 1.2f;
-    [SerializeField] private Vector2 mouseSensitivity = new Vector2(5, 5);
     [SerializeField] private LayerMask groundLayer = 0;
 
     [Header("UI")]
     [SerializeField] private Image damageOverlay = null;
     [SerializeField] private Image crosshair = null;
+    [SerializeField] private Slider healthBar = null;
     [SerializeField] private Text healthText = null;
     [SerializeField] private Text rescueText = null;
     [SerializeField] private Text warnText = null;
@@ -35,6 +35,7 @@ public class PlayerController : MonoBehaviour
     [HideInInspector] public bool dead = false;
     private bool crouching = false;
     private bool running = false;
+    [HideInInspector] public bool aiming = false;
     private int hostagesKilled = 0;
     private bool damaged = false;
     private Vector3 velocity;
@@ -124,7 +125,7 @@ public class PlayerController : MonoBehaviour
                 speed = crouchSpeed;
             }
             characterController.Move(movement.normalized * speed * Time.deltaTime);
-            Ray ray = new Ray (Camera.main.transform.position, Camera.main.transform.forward);
+            Ray ray = new Ray(Camera.main.transform.position, Camera.main.transform.forward);
             if (Physics.Raycast(ray, out RaycastHit hit, 2) && hit.collider.GetComponent<Hostage>() && !hit.collider.GetComponent<Hostage>().rescued)
             {
                 currentHostage = hit.collider.GetComponent<Hostage>();
@@ -153,7 +154,9 @@ public class PlayerController : MonoBehaviour
             damageOverlay.color = Color.Lerp(damageOverlay.color, new Color(1, 0, 0, 0), 10);
         }
         damaged = false;
-        healthText.text = "Health: " + health + "/" + maxHealth;
+        healthBar.maxValue = maxHealth;
+        healthBar.value = health;
+        healthText.text = health + " / " + maxHealth;
     }
 
     #region Input Functions
@@ -203,6 +206,18 @@ public class PlayerController : MonoBehaviour
     {
         if (!dead && !GameController.instance.gameOver && !GameController.instance.won)
         {
+            Vector2 mouseSensitivity;
+            if (!aiming)
+            {
+                mouseSensitivity = new Vector2(PlayerPrefs.GetFloat("MouseX"), PlayerPrefs.GetFloat("MouseY"));
+                if (mouseSensitivity.x < 0.99f) mouseSensitivity.x = 4;
+                if (mouseSensitivity.y < 0.99f) mouseSensitivity.y = 4;
+            } else
+            {
+                mouseSensitivity = new Vector2(PlayerPrefs.GetFloat("AimX"), PlayerPrefs.GetFloat("AimY"));
+                if (mouseSensitivity.x < 0.49f) mouseSensitivity.x = 3;
+                if (mouseSensitivity.y < 0.49f) mouseSensitivity.y = 3;
+            }
             cameraMovement = new Vector2(direction.x * mouseSensitivity.x * Time.deltaTime, direction.y * mouseSensitivity.y * Time.deltaTime);
             cameraX -= cameraMovement.y;
             cameraX = Mathf.Clamp(cameraX, -90, 90);
