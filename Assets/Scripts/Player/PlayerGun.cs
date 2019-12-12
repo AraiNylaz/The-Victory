@@ -29,10 +29,10 @@ public class PlayerGun : MonoBehaviour
     [SerializeField] private GameObject blood = null;
     [SerializeField] private GameObject bulletHole = null;
     [SerializeField] private Camera weaponCamera = null;
+    [SerializeField] private PlayerController playerController = null;
 
     private AudioSource audioSource;
     private Light muzzleLight;
-    private PlayerController playerController;
     private Controls input;
     private int ammo = 30;
     private bool firing = false;
@@ -45,7 +45,6 @@ public class PlayerGun : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
         muzzleLight = muzzle.GetComponent<Light>();
-        playerController = GetComponent<PlayerController>();
         ammo = maxAmmo;
         resetEffects();
     }
@@ -86,7 +85,7 @@ public class PlayerGun : MonoBehaviour
         }
         if (!reloading)
         {
-            ammoText.text = "Ammo: " + ammo + "/" + maxAmmo;
+            ammoText.text = ammo + " / " + maxAmmo;
         } else
         {
             ammoText.text = "Reloading...";
@@ -125,25 +124,24 @@ public class PlayerGun : MonoBehaviour
 
     void aim(bool state)
     {
-        if (!GameController.instance.gameOver && !GameController.instance.won && !GameController.instance.paused)
+        if (!reloading && !GameController.instance.gameOver && !GameController.instance.won && !GameController.instance.paused)
         {
-            if (!reloading)
+            if (state && !aiming)
             {
-                if (state && !aiming)
-                {
-                    aiming = true;
-                    transform.Translate(-aimPosition);
-                    Camera.main.fieldOfView -= aimFOVIncrement;
-                    if (weaponCamera) weaponCamera.fieldOfView = Camera.main.fieldOfView;
-                    if (crosshair) crosshair.enabled = false;
-                } else if (!state && aiming)
-                {
-                    aiming = false;
-                    transform.Translate(aimPosition);
-                    Camera.main.fieldOfView += aimFOVIncrement;
-                    if (weaponCamera) weaponCamera.fieldOfView = Camera.main.fieldOfView;
-                    if (crosshair) crosshair.enabled = true;
-                }
+                aiming = true;
+                transform.Translate(-aimPosition);
+                Camera.main.fieldOfView -= aimFOVIncrement;
+                if (weaponCamera) weaponCamera.fieldOfView = Camera.main.fieldOfView;
+                if (crosshair) crosshair.enabled = false;
+                playerController.aiming = true;
+            } else if (!state && aiming)
+            {
+                aiming = false;
+                transform.Translate(aimPosition);
+                Camera.main.fieldOfView += aimFOVIncrement;
+                if (weaponCamera) weaponCamera.fieldOfView = Camera.main.fieldOfView;
+                if (crosshair) crosshair.enabled = true;
+                playerController.aiming = false;
             }
         }
     }
