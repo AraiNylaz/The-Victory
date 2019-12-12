@@ -423,7 +423,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4973410384795280987}
-  m_LocalRotation: {x: 0.001728826, y: 0.023046978, z: 0.9990548, w: -0.036815006}
+  m_LocalRotation: {x: 0.001728826, y: 0.02304698, z: 0.9990548, w: -0.03681501}
   m_LocalPosition: {x: 0.0464199, y: -0.056259077, z: 0.013975013}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -990,7 +990,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4973410384795281299}
-  m_LocalRotation: {x: -0.0002258048, y: 0.003457063, z: -0.009625376, w: 0.99994767}
+  m_LocalRotation: {x: -0.00022580482, y: 0.003457063, z: -0.009625377, w: 0.99994767}
   m_LocalPosition: {x: -0.0019716274, y: 0.035482556, z: 2.47569e-10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1786,7 +1786,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4973410384794991559}
   - component: {fileID: 4973410384785921063}
-  - component: {fileID: 212378952469900078}
   - component: {fileID: 6151630645760041695}
   - component: {fileID: 1048476105287762180}
   - component: {fileID: 8224051313416929528}
@@ -1824,8 +1823,8 @@ Animator:
   m_GameObject: {fileID: 4973410384795281383}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: a88dfb74ceccd42348d1b673ceb83fac, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 1
+  m_Controller: {fileID: 9100000, guid: f4820a5552a8da945842e0de0b7a22da, type: 2}
+  m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -1833,26 +1832,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!111 &212378952469900078
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4973410384795281383}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: -203655887218126122, guid: 8777f0701a4b87d43bfaf8a400c4017e,
-    type: 3}
-  m_Animations:
-  - {fileID: -203655887218126122, guid: 8777f0701a4b87d43bfaf8a400c4017e, type: 3}
-  - {fileID: -203655887218126122, guid: 88650d97f680c5b44b51f5cf36e28a1d, type: 3}
-  - {fileID: -203655887218126122, guid: ae30d46f32641e44d81840c2ce751859, type: 3}
-  - {fileID: -203655887218126122, guid: 2802dd3ba9bd9dc4c85848ac5b156762, type: 3}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!136 &6151630645760041695
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2001,7 +1980,7 @@ MonoBehaviour:
   maxHealth: 100
   hurtSound: {fileID: 8300000, guid: 9b5a0514d7cbbd14e866d172dc5e8ea9, type: 3}
   deathSound: {fileID: 8300000, guid: a0cf35a3a48841b4eb9997128842a392, type: 3}
-  bloodPoint: {fileID: 4973410384794991171}
+  dead: 0
   rescued: 0
 --- !u!1 &4973410384795281385
 GameObject:
