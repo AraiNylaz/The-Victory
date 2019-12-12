@@ -26,7 +26,6 @@ public class GameController : MonoBehaviour
 
     [Header("Sound Effects")]
     [SerializeField] private AudioClip loseMusic = null;
-    [SerializeField] private AudioClip winMusic = null;
 
     [Header("Setup")]
     [SerializeField] private AudioMixer audioMixer = null;
@@ -124,17 +123,7 @@ public class GameController : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
         } else if (!gameOver && won)
         {
-            if (!loading && !settingsMenu.enabled && !graphicsQualityMenu.enabled && !soundMenu.enabled) levelCompletedMenu.enabled = true;
-            if (winMusic)
-            {
-                AudioSource music = Camera.main.GetComponent<AudioSource>();
-                if (music && music.clip != winMusic)
-                {
-                    music.clip = winMusic;
-                    music.Stop();
-                    music.Play();
-                }
-            }
+            StartCoroutine(loadScene("Ending"));
             Cursor.lockState = CursorLockMode.None;
         }
         if (!loading)
