@@ -11,7 +11,7 @@ public class Hostage : MonoBehaviour
     [SerializeField] private AudioClip deathSound = null;
 
     private NavMeshAgent navMeshAgent;
-    private new Animation animation;
+    private Animator animator;
     private AudioSource audioSource;
     private long health = 100;
     [HideInInspector] public bool dead = false;
@@ -20,7 +20,7 @@ public class Hostage : MonoBehaviour
     void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
-        animation = GetComponent<Animation>();
+        animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
         health = maxHealth;
         dead = false;
@@ -34,10 +34,10 @@ public class Hostage : MonoBehaviour
             dead = true;
             if (Random.value <= 0.5f)
             {
-                animation.Play("Falling Forward Death", PlayMode.StopAll);
+                animator.SetTrigger("DieForward");
             } else
             {
-                animation.Play("Falling Back Death", PlayMode.StopAll);
+                animator.SetTrigger("DieBack");
             }
             GetComponent<Collider>().enabled = false;
             if (FindObjectOfType<PlayerController>()) FindObjectOfType<PlayerController>().warn();
@@ -50,7 +50,7 @@ public class Hostage : MonoBehaviour
         if (!dead && !rescued)
         {
             rescued = true;
-            animation.Play("Idle", PlayMode.StopAll);
+            animator.SetBool("Rescued", true);
         }
     }
 
