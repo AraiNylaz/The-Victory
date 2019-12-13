@@ -15,11 +15,11 @@ public class GameController : MonoBehaviour
     [SerializeField] private Canvas gameHUD = null;
     [SerializeField] private Canvas gamePausedMenu = null;
     [SerializeField] private Canvas gameOverMenu = null;
-    [SerializeField] private Canvas levelCompletedMenu = null;
     [SerializeField] private Canvas settingsMenu = null;
     [SerializeField] private Canvas graphicsQualityMenu = null;
     [SerializeField] private Canvas soundMenu = null;
     [SerializeField] private Canvas mouseMenu = null;
+    [SerializeField] private Canvas quitGameMenu = null;
     [SerializeField] private GameObject loadingScreen = null; 
     [SerializeField] private Slider loadingSlider = null;
     [SerializeField] private Text loadingPercentage = null;
@@ -32,7 +32,7 @@ public class GameController : MonoBehaviour
 
     private AudioSource audioSource;
     private Controls input;
-    private enum ClickSources {GamePaused, GameOver, LevelCompleted}
+    private enum ClickSources {GamePaused, GameOver}
     [HideInInspector] public bool gameOver = false;
     [HideInInspector] public bool won = false;
     [HideInInspector] public bool paused = false;
@@ -75,11 +75,11 @@ public class GameController : MonoBehaviour
         gameHUD.enabled = true;
         gamePausedMenu.enabled = false;
         gameOverMenu.enabled = false;
-        levelCompletedMenu.enabled = false;
         settingsMenu.enabled = false;
         graphicsQualityMenu.enabled = false;
         soundMenu.enabled = false;
         mouseMenu.enabled = false;
+        quitGameMenu.enabled = false;
     }
 
     void OnEnable()
@@ -120,6 +120,7 @@ public class GameController : MonoBehaviour
                     music.Play();
                 }
             }
+            clickSource = ClickSources.GameOver;
             Cursor.lockState = CursorLockMode.None;
         } else if (!gameOver && won)
         {
@@ -158,11 +159,11 @@ public class GameController : MonoBehaviour
                 gameHUD.enabled = false;
                 gamePausedMenu.enabled = false;
                 gameOverMenu.enabled = false;
-                levelCompletedMenu.enabled = false;
                 settingsMenu.enabled = false;
                 graphicsQualityMenu.enabled = false;
                 soundMenu.enabled = false;
                 mouseMenu.enabled = false;
+                quitGameMenu.enabled = false;
                 yield return null;
             }
         }
@@ -171,7 +172,7 @@ public class GameController : MonoBehaviour
     #region Input Functions
     void pause()
     {
-        if (!gameOver && !won && !gameOverMenu.enabled && !levelCompletedMenu.enabled)
+        if (!gameOver && !won && !gameOverMenu.enabled)
         {
             if (!paused)
             {
@@ -182,7 +183,7 @@ public class GameController : MonoBehaviour
                 gamePausedMenu.enabled = true;
             } else
             {
-                if (!settingsMenu.enabled && !graphicsQualityMenu.enabled && !soundMenu.enabled && !mouseMenu.enabled)
+                if (!settingsMenu.enabled && !graphicsQualityMenu.enabled && !soundMenu.enabled && !mouseMenu.enabled && !quitGameMenu.enabled)
                 {
                     paused = false;
                     Cursor.lockState = CursorLockMode.Locked;
@@ -205,9 +206,6 @@ public class GameController : MonoBehaviour
             } else if (clickSource == ClickSources.GameOver)
             {
                 gameOverMenu.enabled = true;
-            } else if (clickSource == ClickSources.LevelCompleted)
-            {
-                levelCompletedMenu.enabled = true;
             }
         } else if (graphicsQualityMenu.enabled)
         {
@@ -221,6 +219,16 @@ public class GameController : MonoBehaviour
         {
             mouseMenu.enabled = false;
             settingsMenu.enabled = true;
+        } else if (quitGameMenu.enabled)
+        {
+            quitGameMenu.enabled = false;
+            if (clickSource == ClickSources.GamePaused)
+            {
+                gamePausedMenu.enabled = true;
+            } else if (clickSource == ClickSources.GameOver)
+            {
+                gameOverMenu.enabled = true;
+            }
         }
     }
     #endregion
@@ -268,9 +276,6 @@ public class GameController : MonoBehaviour
             } else if (clickSource == ClickSources.GameOver)
             {
                 gameOverMenu.enabled = false;
-            } else if (clickSource == ClickSources.LevelCompleted)
-            {
-                levelCompletedMenu.enabled = false;
             }
         } else
         {
@@ -281,9 +286,6 @@ public class GameController : MonoBehaviour
             } else if (clickSource == ClickSources.GameOver)
             {
                 gameOverMenu.enabled = true;
-            } else if (clickSource == ClickSources.LevelCompleted)
-            {
-                levelCompletedMenu.enabled = true;
             }
         }
     }
