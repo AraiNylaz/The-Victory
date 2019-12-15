@@ -110,11 +110,11 @@ NavMeshSettings:
     agentHeight: 1.5
     agentSlope: 60
     agentClimb: 0.75
-    ledgeDropHeight: 0
+    ledgeDropHeight: 2
     maxJumpAcrossDistance: 0
     minRegionArea: 2
     manualCellSize: 1
-    cellSize: 0.1
+    cellSize: 0.08
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 1
