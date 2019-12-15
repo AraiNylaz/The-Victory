@@ -11,12 +11,13 @@ GameObject:
   - component: {fileID: 4052329360818378}
   - component: {fileID: 33357689942045608}
   - component: {fileID: 23022665176233292}
+  - component: {fileID: 1756592486591267416}
   m_Layer: 0
   m_Name: Oak2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 123
   m_IsActive: 1
 --- !u!4 &4052329360818378
 Transform:
@@ -79,3 +80,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!136 &1756592486591267416
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1969506690038558}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 2
+  m_Height: 37.129257
+  m_Direction: 1
+  m_Center: {x: 0, y: 17.652985, z: 0.021048546}

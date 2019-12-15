@@ -11,13 +11,13 @@ GameObject:
   - component: {fileID: 4807327006544470}
   - component: {fileID: 33463206233210374}
   - component: {fileID: 23084524858069022}
-  - component: {fileID: 95085564227879946}
+  - component: {fileID: 4795606423071794350}
   m_Layer: 0
   m_Name: Tree1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 123
   m_IsActive: 1
 --- !u!4 &4807327006544470
 Transform:
@@ -80,22 +80,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!95 &95085564227879946
-Animator:
-  serializedVersion: 3
+--- !u!136 &4795606423071794350
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1449644707152252}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: e59dcd9baff787f41aa2bac76e3dbb05, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_Radius: 0.5
+  m_Height: 14.672346
+  m_Direction: 1
+  m_Center: {x: -0.043771744, y: 7.0957146, z: -0.1}
